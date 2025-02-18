@@ -3,7 +3,7 @@ import Link from "next/link"
 function Navbar() {
     return (
         <nav>
-            <div className="header__wrapper flex justify-center"> 
+            <div className="flex justify-center "> 
                 <Link href="/">
                     SKINSTRIC
                 </Link>
