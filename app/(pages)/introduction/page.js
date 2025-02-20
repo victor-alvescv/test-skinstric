@@ -21,7 +21,7 @@ function Introduction() {
                 </div>
 
                 <div className='flex items-center h-screen flex-col  justify-center absolute left-1/2 transform -translate-x-1/2 text-center top-1/2 -translate-y-1/2'>
-                    <div className='font-normal tracking-normal absolute bottom-full mb-2px opacity-40 '>CLICK TO TYPE</div>
+                    <div className='font-normal tracking-normal absolute bottom-full mb-2px opacity-40 leading-[1.71] text-[clamp(10px, -6px + 1.5625vw, 14px)]'>CLICK TO TYPE</div>
 
                 </div>
 
