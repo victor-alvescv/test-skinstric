@@ -13,6 +13,19 @@ function Introduction() {
                 <div class="introduction-square js-introduction-square">
                     <span class="dotted-square is-expanded is-animated"></span>
                 </div>
+
+                <div className='flex items-center h-screen flex-col  justify-center absolute left-1/2 transform -translate-x-1/2 text-center top-1/2 -translate-y-1/2'>
+                    <div className='font-normal tracking-normal absolute bottom-full mb-2px opacity-40 '>CLICK TO TYPE</div>
+
+                </div>
+
+                <div className='items-center flex "mt-auto'>
+                    <button>
+                        <span></span>
+                    </button>
+
+
+                </div>
             </div>
         </main>
     
