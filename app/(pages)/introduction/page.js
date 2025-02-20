@@ -7,7 +7,7 @@ function Introduction() {
       <div className="flex flex-col flex-auto">
         <nav className="items-center flex h-16 justify-between left-0 fixed top-0 w-full z-30 mx-auto max-w-[2560px] px-8">
           <div className="flex items-center relative z-30 ">
-            <Link href="/" className="font-bold text-[10px]">
+            <Link href="/" className="font-bold text-[10px]" style={{ fontSize: "clamp(10px,-2px + .9375vw,16px)" }}>
               SKINSTRIC
             </Link>
           </div>
@@ -30,6 +30,13 @@ function Introduction() {
               <div className="font-normal tracking-normal absolute bottom-full mb-2px opacity-40 leading-[1.71] text-[clamp(10px, -6px + 1.5625vw, 14px)]">
                 CLICK TO TYPE
               </div>
+              <form style={{ clippath: "inset(0%)," }}>
+                    <div className="py-[5px] relative">
+                        <input className="border-b border-solid border-black leading-none text-center text-[#1a1b1c]" style={{ width: "calc((var(--introduction-form-label-symbols, 15) - 5.5)* 1ch)" }}/>
+                    </div>
+
+
+              </form>
             </div>
 
             <div className='items-center flex "mt-auto'>
