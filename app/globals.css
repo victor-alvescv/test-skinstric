@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --offset-x: 32px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,7 +40,6 @@ a {
   text-decoration: none;
 }
 
-
 .introduction__square {
   left: 50%;
   position: absolute;
@@ -49,10 +48,285 @@ a {
   z-index: -1;
 }
 
+.dotted-square {
+  --base-transform: translate(0);
+  --base-rotation: 45deg;
+  --size: 200px;
+  --transition-duration: 0.3s;
+  display: block;
+  height: var(--size);
+  position: relative;
+  transform: rotate(var(--base-rotation));
+  width: var(--size);
+  will-change: transform;
+}
 
+.dotted-square.is-animated:before {
+  animation: spin 480s linear infinite;
+}
+
+.dotted-square.is-expanded:before {
+  --base-transform: translate(-50%, -50%) scale(1.1);
+
+  transform: var(--base-transform);
+
+  transition: transform var(--transition-duration)
+    cubic-bezier(0.08, 0.5, 0.44, 0.96);
+}
+
+.dotted-square.is-not-expanded:before,
+.dotted-square:before {
+  --base-transform: translate(-50%, -50%);
+
+  opacity: 0.6;
+
+  transform: var(--base-transform);
+
+  transition: transform var(--transition-duration)
+    cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2);
+}
+
+.dotted-square.is-animated:after {
+  animation: spin 240s linear infinite;
+}
+
+.dotted-square.is-expanded:after {
+  --base-transform: translate(-50%, -50%) scale(1.2);
+
+  opacity: 0.3;
+
+  transform: var(--base-transform);
+
+  transition: transform var(--transition-duration)
+      cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2),
+    opacity 0s calc(var(--transition-duration) / 2);
+}
+
+.dotted-square.is-not-expanded:after,
+.dotted-square:after {
+  --base-transform: translate(-50%, -50%) scale(1.1);
+
+  opacity: 0;
+
+  transform: var(--base-transform);
+
+  transition: transform var(--transition-duration)
+      cubic-bezier(0.08, 0.5, 0.44, 0.96),
+    opacity 0s ease calc(var(--transition-duration) / 2);
+}
+
+.dotted-square:after,
+.dotted-square:before {
+  --base-rotation: 0deg;
+
+  border: inherit;
+
+  content: "";
+
+  height: inherit;
+
+  left: 50%;
+
+  position: absolute;
+
+  top: 50%;
+
+  width: inherit;
+}
+
+.dotted-square,
+.dotted-square:after,
+.dotted-square:before {
+  background-image: repeating-linear-gradient(
+      -18deg,
+      #58595a,
+      #58595a 1px,
+      #0000 0,
+      #0000 5px,
+      #58595a 0
+    ),
+    repeating-linear-gradient(
+      72deg,
+      #58595a,
+      #58595a 1px,
+      #0000 0,
+      #0000 5px,
+      #58595a 0
+    ),
+    repeating-linear-gradient(
+      162deg,
+      #58595a,
+      #58595a 1px,
+      #0000 0,
+      #0000 5px,
+      #58595a 0
+    ),
+    repeating-linear-gradient(
+      252deg,
+      #58595a,
+      #58595a 1px,
+      #0000 0,
+      #0000 5px,
+      #58595a 0
+    );
+
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+
+  background-repeat: no-repeat;
+
+  background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+}
+
+.dotted-square:after,
+.dotted-square:before {
+  --base-rotation: 0deg;
+
+  border: inherit;
+
+  content: "";
+
+  height: inherit;
+
+  left: 50%;
+
+  position: absolute;
+
+  top: 50%;
+
+  width: inherit;
+}
+
+.dotted-square,
+.dotted-square:after,
+.dotted-square:before {
+  background-image: repeating-linear-gradient(
+      -18deg,
+      #58595a,
+      #58595a 1px,
+      #0000 0,
+      #0000 5px,
+      #58595a 0
+    ),
+    repeating-linear-gradient(
+      72deg,
+      #58595a,
+      #58595a 1px,
+      #0000 0,
+      #0000 5px,
+      #58595a 0
+    ),
+    repeating-linear-gradient(
+      162deg,
+      #58595a,
+      #58595a 1px,
+      #0000 0,
+      #0000 5px,
+      #58595a 0
+    ),
+    repeating-linear-gradient(
+      252deg,
+      #58595a,
+      #58595a 1px,
+      #0000 0,
+      #0000 5px,
+      #58595a 0
+    );
+
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+
+  background-repeat: no-repeat;
+
+  background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+}
+
+.dotted-square,
+.dotted-square:after,
+.dotted-square:before {
+  background-image: repeating-linear-gradient(
+      -18deg,
+
+      #58595a,
+      #58595a 1px,
+
+      #0000 0,
+
+      #0000 5px,
+
+      #58595a 0
+    ),
+    repeating-linear-gradient(
+      72deg,
+      #58595a,
+      #58595a 1px,
+
+      #0000 0,
+
+      #0000 5px,
+
+      #58595a 0
+    ),
+    repeating-linear-gradient(
+      162deg,
+      #58595a,
+      #58595a 1px,
+
+      #0000 0,
+
+      #0000 5px,
+
+      #58595a 0
+    ),
+    repeating-linear-gradient(
+      252deg,
+      #58595a,
+      #58595a 1px,
+
+      #0000 0,
+
+      #0000 5px,
+
+      #58595a 0
+    );
+
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+
+  background-repeat: no-repeat;
+
+  background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+}
+
+.dotted-square.is-animated {
+  animation: spin 120s linear infinite;
+}
+
+.introduction-square .dotted-square {
+  --size: 42vmax;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+.dotted-square {
+  --base-transform: translate(0);
+
+  --base-rotation: 45deg;
+
+  --size: 200px;
+
+  --transition-duration: 0.3s;
+
+  display: block;
+
+  height: var(--size);
+
+  position: relative;
+
+  transform: rotate(var(--base-rotation));
+
+  width: var(--size);
+
+  will-change: transform;
 }
