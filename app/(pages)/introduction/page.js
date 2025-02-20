@@ -1,10 +1,16 @@
-import Navbar from '@/app/components/Navbar'
+import Link from 'next/link'
 import React from 'react'
 
 function Introduction() {
   return (
     <>
-        <Navbar/>
+        <nav className="flex items-center justify-between top-0 z-3 py-8 px-9 ml-9 mr-9 w-full">
+            <div className="flex items-center relative z-30 "> 
+                <Link href="/" className="font-bold">
+                    SKINSTRIC
+                </Link>
+                </div>
+         </nav>
         <main className='relative flex flex-auto flex-col inherit-z ml-9 mr-9'>
             <div className='flex flex-1 flex-shrink basis-auto flex-col pb-9 relative overflow-hidden ml-auto mr-auto max-w-[2560px] pl-offset-x pr-offset-x w-full'>
                 <div className='flex flex-col pb-9 pt-9 absolute left-offset-x overflow-hidden'>
