@@ -45,7 +45,7 @@ function Introduction() {
                         "calc((var(--introduction-form-label-symbols, 15) - 5.5)* 1ch)",
                     }}
                   />
-                  <label className="text-center text-[#1a1b1c] " style={{ fontSize: "clamp(44px, 12px + 2.5vw, 60px)" }}>Introduce yourself</label>
+                  <label className="text-center text-[#1a1b1c] tracking-[-.07em] leading-[1.33]" style={{ fontSize: "clamp(44px, 12px + 2.5vw, 60px)" }}>Introduce yourself</label>
                 </div>
               </form>
             </div>
