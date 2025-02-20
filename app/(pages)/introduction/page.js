@@ -4,7 +4,7 @@ import React from 'react'
 function Introduction() {
   return (
     <>
-        <nav className="flex items-center justify-between top-0 z-3 ml-9 mr-9 w-full">
+        <nav className="flex items-center justify-between top-0 z-3 ml-9 mr-9 w-full h-[64px]">
             <div className="flex items-center relative z-30 "> 
                 <Link href="/" className="font-bold">
                     SKINSTRIC
