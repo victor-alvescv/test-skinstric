@@ -36,16 +36,12 @@ function Introduction() {
               >
                 Click to type
               </div>
-              <form style={{ clippath: "inset(0%)," }}>
+              <form>
                 <div className="py-[5px] relative">
-                  <input
-                    className="border-b border-solid border-black leading-none text-center text-[#1a1b1c]"
-                    style={{
-                      width:
-                        "calc((var(--introduction-form-label-symbols, 15) - 5.5)* 1ch)",
-                    }}
-                  />
-                  <label className="text-center text-[#1a1b1c] tracking-[-.07em] leading-[1.33]" style={{ fontSize: "clamp(44px, 12px + 2.5vw, 60px)" }}>Introduce yourself</label>
+                  <input className="introduction__input" />
+                  <label className="introduction__input--label">
+                    Introduce yourself
+                  </label>
                 </div>
               </form>
             </div>

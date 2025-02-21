@@ -104,9 +104,7 @@ a {
   --base-transform: translate(-50%, -50%) scale(1.1);
 
   opacity: 0;
-
   transform: var(--base-transform);
-
   transition: transform var(--transition-duration)
       cubic-bezier(0.08, 0.5, 0.44, 0.96),
     opacity 0s ease calc(var(--transition-duration) / 2);
@@ -115,19 +113,12 @@ a {
 .dotted-square:after,
 .dotted-square:before {
   --base-rotation: 0deg;
-
   border: inherit;
-
   content: "";
-
   height: inherit;
-
   left: 50%;
-
   position: absolute;
-
   top: 50%;
-
   width: inherit;
 }
 
@@ -168,28 +159,60 @@ a {
     );
 
   background-position: 0 0, 0 0, 100% 0, 0 100%;
-
   background-repeat: no-repeat;
-
   background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+}
+
+.introduction__input {
+  border-bottom: 1px solid;
+  line-height: 1;
+  width: 12.5ch;
+  color: #1a1b1c;
+  text-align: center;
+  font-size: clamp(44px, 12px + 2.5vw, 60px);
+  letter-spacing: -0.07em;
+  font-weight: 400;
+  line-height: 1;
+  margin-top: 0;
+  appearance: none;
+  background-color: #0000;
+  border: 0;
+  display: block;
+  padding: var(--padding-y) 0;
+  transition: border-color 0.2s ease;
+}
+
+form {
+  clip-path: inset(0%);
+}
+
+.introduction__input--label {
+  transition: opacity 0.15s cubic-bezier(0.08, 0.5, 0.44, 0.96);
+  width: 12.5ch;
+  color: #1a1b1c;
+  text-align: center;
+  font-size: clamp(44px, 12px + 2.5vw, 60px);
+  letter-spacing: -0.07em;
+  line-height: 1.33;
+  font-weight: 400;
+  left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  pointer-events: none;
+  display: block;
+  top: 5%;
+  position: absolute;
 }
 
 .dotted-square:after,
 .dotted-square:before {
   --base-rotation: 0deg;
-
   border: inherit;
-
   content: "";
-
   height: inherit;
-
   left: 50%;
-
   position: absolute;
-
   top: 50%;
-
   width: inherit;
 }
 
@@ -230,9 +253,7 @@ a {
     );
 
   background-position: 0 0, 0 0, 100% 0, 0 100%;
-
   background-repeat: no-repeat;
-
   background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
 }
 
@@ -241,12 +262,9 @@ a {
 .dotted-square:before {
   background-image: repeating-linear-gradient(
       -18deg,
-
       #58595a,
       #58595a 1px,
-
       #0000 0,
-
       #0000 5px,
 
       #58595a 0
@@ -255,40 +273,29 @@ a {
       72deg,
       #58595a,
       #58595a 1px,
-
       #0000 0,
-
       #0000 5px,
-
       #58595a 0
     ),
     repeating-linear-gradient(
       162deg,
       #58595a,
       #58595a 1px,
-
       #0000 0,
-
       #0000 5px,
-
       #58595a 0
     ),
     repeating-linear-gradient(
       252deg,
       #58595a,
       #58595a 1px,
-
       #0000 0,
-
       #0000 5px,
-
       #58595a 0
     );
 
   background-position: 0 0, 0 0, 100% 0, 0 100%;
-
   background-repeat: no-repeat;
-
   background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
 }
 
@@ -297,16 +304,15 @@ a {
 }
 
 .introduction-square .dotted-square {
-  --size: 23.43vw
+  --size: 23.43vw;
 }
-
 
 .introduction-square {
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  z-index: -1
+  z-index: -1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -316,35 +322,27 @@ a {
 }
 
 @media screen and (max-width: 1366px) {
-  .index-dotted-square .dotted-square, .introduction-square .dotted-square {
-    --size: 30vw
+  .index-dotted-square .dotted-square,
+  .introduction-square .dotted-square {
+    --size: 30vw;
   }
 }
 
 @media screen and (max-width: 1199px) {
   .introduction-square .dotted-square {
-    --size: 42vmax
+    --size: 42vmax;
   }
 }
 
 .dotted-square {
   --base-transform: translate(0);
-
   --base-rotation: 45deg;
-
   --size: 200px;
-
   --transition-duration: 0.3s;
-
   display: block;
-
   height: var(--size);
-
   position: relative;
-
   transform: rotate(var(--base-rotation));
-
   width: var(--size);
-
   will-change: transform;
 }
