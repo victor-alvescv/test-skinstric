@@ -59,7 +59,7 @@ a {
 }
 
 .dotted-square.is-animated:before {
-  animation: spin 480s linear infinite;
+  animation: rotate 480s linear infinite;
 }
 
 .dotted-square.is-expanded:before {
@@ -84,7 +84,7 @@ a {
 }
 
 .dotted-square.is-animated:after {
-  animation: spin 240s linear infinite;
+  animation: rotate 240s linear infinite;
 }
 
 .dotted-square.is-expanded:after {
@@ -300,7 +300,7 @@ form {
 }
 
 .dotted-square.is-animated {
-  animation: spin 120s linear infinite;
+  animation: rotate 120s linear infinite;
 }
 
 .introduction-square .dotted-square {
@@ -345,4 +345,13 @@ form {
   transform: rotate(var(--base-rotation));
   width: var(--size);
   will-change: transform;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
