@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -57,7 +58,7 @@ function Introduction() {
             </div>
 
             <div className='items-center flex "mt-auto'>
-                <div>
+                <div className="">
                     <button>
                          <span></span>
                     </button>
