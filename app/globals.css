@@ -58,8 +58,8 @@ a {
   will-change: transform;
 }
 
-.dotted-square.is-animated:before {
-  animation: rotate 480s linear infinite;
+.dotted-square.is-animated {
+  animation: spin 120s linear infinite;
 }
 
 .dotted-square.is-expanded:before {
@@ -83,8 +83,12 @@ a {
     cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2);
 }
 
+.dotted-square.is-animated:before {
+  animation: spin 480s linear infinite;
+}
+
 .dotted-square.is-animated:after {
-  animation: rotate 240s linear infinite;
+  animation: spin 240s linear infinite;
 }
 
 .dotted-square.is-expanded:after {
@@ -299,10 +303,6 @@ form {
   background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
 }
 
-.dotted-square.is-animated {
-  animation: rotate 120s linear infinite;
-}
-
 .introduction-square .dotted-square {
   --size: 23.43vw;
 }
@@ -334,24 +334,12 @@ form {
   }
 }
 
-.dotted-square {
-  --base-transform: translate(0);
-  --base-rotation: 45deg;
-  --size: 200px;
-  --transition-duration: 0.3s;
-  display: block;
-  height: var(--size);
-  position: relative;
-  transform: rotate(var(--base-rotation));
-  width: var(--size);
-  will-change: transform;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
+@keyframes spin {
+  0% {
+    transform: var(--base-transform) rotate(calc(var(--base-rotation)));
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    transform: var(--base-transform) rotate(calc(var(--base-rotation) + 1turn));
   }
 }

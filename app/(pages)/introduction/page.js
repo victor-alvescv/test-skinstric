@@ -32,8 +32,7 @@ function Introduction() {
             <div className="items-center flex flex-col justify-center left-1/2 absolute text-center top-1/2 translate-x-[-50%] translate-y-[-50%]">
               <div
                 style={{ fontSize: "clamp(10px,-6px + 1.5625vw,14px)" }}
-                className="bottom-[100%] mb-1 opacity-40 absolute uppercase font-normal tracking-[0] leading-[1.71]"
-              >
+                className="bottom-[100%] mb-1 opacity-40 absolute uppercase font-normal tracking-[0] leading-[1.71]">
                 Click to type
               </div>
               <form>
@@ -47,9 +46,12 @@ function Introduction() {
             </div>
 
             <div className='items-center flex "mt-auto'>
-              <button>
-                <span></span>
-              </button>
+                <div>
+                    <button>
+                         <span></span>
+                    </button>
+                </div>
+
             </div>
           </div>
         </main>
