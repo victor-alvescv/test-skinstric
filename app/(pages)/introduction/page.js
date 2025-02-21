@@ -1,7 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+
+
 
 function Introduction() {
+    const [isFocused, setIsFocused] = useState(false);
+
   return (
     <>
       <div className="flex flex-col flex-auto">
@@ -38,9 +42,16 @@ function Introduction() {
               <form>
                 <div className="py-[5px] relative">
                   <input className="introduction__input" />
-                  <label className="introduction__input--label">
-                    Introduce yourself
-                  </label>
+
+                    <div>
+                        {!isFocused && <label htmlFor="inputField" className="introduction__input--label">Introduce yourself</label>}
+                        <input
+                            id="inputField"
+                            type="text"
+                            onFocus={() => setIsFocused(true)}
+                            onBlur={() => setIsFocused(false)} // to show label again when input is not focused
+                        />
+                    </div>
                 </div>
               </form>
             </div>
