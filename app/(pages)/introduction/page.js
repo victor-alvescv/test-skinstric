@@ -49,6 +49,7 @@ function Introduction() {
                         <input
                             id="inputField"
                             type="text"
+                            placeholder="Introduce yourself"
                             onFocus={() => setIsFocused(true)}
                             onBlur={() => setIsFocused(false)} // to show label again when input is not focused
                         />
@@ -58,7 +59,7 @@ function Introduction() {
             </div>
 
             <div className='items-center flex "mt-auto'>
-                <div className="">
+                <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
                     <button>
                          <span></span>
                     </button>
