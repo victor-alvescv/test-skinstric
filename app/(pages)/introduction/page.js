@@ -41,23 +41,14 @@ function Introduction() {
                 Click to type
               </div>
               <form>
-                <div className="py-[5px] relative">
-                  <input className="introduction__input" />
-
-                    <div>
-                        {!isFocused && <label htmlFor="inputField" className="introduction__input--label">Introduce yourself</label>}
-                        <input
-                            id="inputField"
-                            type="text"
-                            placeholder="Introduce yourself"
-                            onFocus={() => setIsFocused(true)}
-                            onBlur={() => setIsFocused(false)} // to show label again when input is not focused
-                        />
-                    </div>
+              <div className="py-[5px] relative">
+                    <input
+                    placeholder="Introduce Yourself"
+                    className="introduction__input text-black placeholder:text-black"
+                    />
                 </div>
               </form>
             </div>
-
             <div className='items-center flex "mt-auto'>
                 <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
                     <button>
