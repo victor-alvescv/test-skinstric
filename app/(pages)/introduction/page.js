@@ -67,13 +67,13 @@ function Introduction() {
             <div className='items-center flex "mt-auto'>
                 <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
                     <button>
-                         <span>Back</span>
+                         <span>BACK</span>
                     </button>
                 </div>
                 <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
-                    <button>
-                         <span>Proceed</span>
-                    </button>
+                    {name && <button>
+                         <span>PROCEED</span>
+                    </button>}
                 </div>
 
             </div>
