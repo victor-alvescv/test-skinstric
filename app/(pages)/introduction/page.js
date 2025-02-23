@@ -62,22 +62,17 @@ function Introduction() {
                                 <div className="py-[5px] relative">
                                     {!showLocation && (
                                         <>
-                                            {isTyping ? (
-                                                <input
-                                                    type="text"
-                                                    value={name}
-                                                    onChange={(e) => setName(e.target.value)}
-                                                    placeholder="Introduce Yourself"
-                                                    className="introduction__input text-black placeholder:text-black"
-                                                />
-                                            ) : (
-                                                <div
-                                                className="cursor-pointer text-center"
-                                                onClick={handleClick}
-                                              >
-                                                {name || "Click To Type"}
-                                              </div>
-                                            )}
+                                           {!showLocation && (
+                                        <>
+                                        <input
+                                            type="text"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            placeholder="Introduce Yourself"
+                                            className="introduction__input text-black placeholder:text-black"
+                                        />
+                                        </>
+                                        )}
                                         </>
                                     )}
                                     {showLocation && (
@@ -100,7 +95,7 @@ function Introduction() {
                             </div>
                             <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
                                 {!showLocation && name && (
-                                    <button onClick={handleProceed}>
+                                    <button onClick={handleProceed} className="absolute right-0">
                                         <span>PROCEED</span>
                                     </button>
                                 )}
