@@ -6,6 +6,11 @@ import React, { useState } from "react";
 
 function Introduction() {
     const [isFocused, setIsFocused] = useState(false);
+    const [name, setName] = useState("");
+    const [isTyping, setIsTyping] = useState(false);
+    const handleClick = () => {
+        setIsTyping(true);
+      };
 
   return (
     <>
@@ -42,17 +47,28 @@ function Introduction() {
               </div>
               <form>
               <div className="py-[5px] relative">
-                    <input
-                    placeholder="Introduce Yourself"
-                    className="introduction__input text-black placeholder:text-black"
-                    />
+                   {isTyping ? (
+                     <input
+                     type="text"
+                     value={name}
+                     onChange = {(e) => setName(e.target.value)}
+                     placeholder="Introduce Yourself"
+                     className="introduction__input text-black placeholder:text-black"
+                     />
+                   ) : (
+                    <p className="absolute top-37p left-33p cursor-pointer rotate-[-45deg] " onClick={handleClick}>
+                    {name || "Click To Type"}
+                  </p>
+                   )            
+                }
+
                 </div>
               </form>
             </div>
             <div className='items-center flex "mt-auto'>
                 <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
                     <button>
-                         <span></span>
+                         <span>Back</span>
                     </button>
                 </div>
 
