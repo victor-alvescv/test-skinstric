@@ -70,6 +70,11 @@ function Introduction() {
                          <span>Back</span>
                     </button>
                 </div>
+                <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
+                    <button>
+                         <span>Proceed</span>
+                    </button>
+                </div>
 
             </div>
           </div>
