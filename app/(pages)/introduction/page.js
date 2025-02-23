@@ -20,6 +20,10 @@ function Introduction() {
         setIsTyping(true);
     };
 
+    const handleClick = () => {
+        setIsTyping(true);
+    };
+
   return (
     <>
       <div className="flex flex-col flex-auto">
@@ -67,12 +71,12 @@ function Introduction() {
                                                     className="introduction__input text-black placeholder:text-black"
                                                 />
                                             ) : (
-                                                <p
-                                                    className="absolute top-37p left-33p cursor-pointer rotate-[-45deg]"
-                                                    onClick={handleClick}
-                                                >
-                                                    {name || "Click To Type"}
-                                                </p>
+                                                <div
+                                                className="cursor-pointer text-center"
+                                                onClick={handleClick}
+                                              >
+                                                {name || "Click To Type"}
+                                              </div>
                                             )}
                                         </>
                                     )}
