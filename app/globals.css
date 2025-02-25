@@ -328,6 +328,30 @@ button {
   letter-spacing: -.02em;
 }
 
+.button__back {
+  cursor: pointer;
+  color: #1a1b1c;
+  --color-default: #1a1b1c;
+  --color-hover: var(--color-default);
+  --color-active: var(--color-hover);
+  --color-disabled: #a0a4ab;
+  --color: var(--color-default);
+  --outline-color: #1a1b1c;
+  --text-offset-x: 18px;
+  --text-translate-x: 28px;
+  --icon-size: 24px;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .2s ease;
+  font-size: clamp(10px, 2px + .625vw, 14px);
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+
 .button__icon--square {
   order: 1;
   flex-shrink: 0;
@@ -350,6 +374,7 @@ svg {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
+  transform: rotate(15deg);
 }
 
 
