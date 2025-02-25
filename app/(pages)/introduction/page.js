@@ -109,7 +109,7 @@ function Introduction() {
                                     <button onClick={handleProceed} className="button__proceed">
                                         <span className="button__icon--square">
                                             <span className="button__icon--square-inner">
-                                                <svg className="w-3 h-3 relative -top-1 left-1" viewBox="0 0 11 12" fill="#1A1B1C" xmlns="http://www.w3.org/2000/svg" role="img">
+                                                <svg className="w-3 h-3 relative -top-1 left-1 transform rotate-90" viewBox="0 0 11 12" fill="#1A1B1C" xmlns="http://www.w3.org/2000/svg" role="img">
                                                     <path d="M10.145 6 .716 11.444V.556L10.145 6Z" fill="current"></path>
                                                 </svg>
                                             </span>
