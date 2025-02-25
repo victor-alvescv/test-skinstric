@@ -366,15 +366,21 @@ button {
   justify-content: center;
   padding: calc(var(--icon-size)* .35);
   position: relative;
-  transform: rotate(45deg);
   width: inherit;
+}
+
+.button__icon-left {
+  transform: rotate(90deg);
+}
+
+.button__icon-right {
+  transform: rotate(-90deg);
 }
 
 svg {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
-  transform: rotate(15deg);
 }
 
 
