@@ -5,11 +5,12 @@ import React, { useState } from "react";
 
 
 function Introduction() {
-    const [isFocused, setIsFocused] = useState(false);
     const [name, setName] = useState("");
     const [isTyping, setIsTyping] = useState(false);
     const [location, setLocation] = useState("");
     const [showLocation, setShowLocation] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
+
     const handleProceed = () => {
         setShowLocation(true);
         setIsTyping(false);
@@ -23,10 +24,7 @@ function Introduction() {
     const handleClick = () => {
         setIsTyping(true);
     };
-
-    const InputField = () => {
-        const [isFocused, setIsFocused] = useState(false);
-    }
+  
 
   return (
     <>
@@ -64,32 +62,39 @@ function Introduction() {
                             </div>
                             <form>
                                 <div className="py-[5px] relative">
-                                    {!showLocation && (
-                                        <>
-                                           {!showLocation && (
-                                        <>
-                                        <input
-                                            type="text"
-                                            onFocus={() => setIsFocused(true)}
-                                            onBlur={() => setIsFocused(false)}
-                                            value={name}
-                                            onChange={(e) => setName(e.target.value)}
-                                            className="introduction__input text-black placeholder:text-black"
-                                        />
-                                        <label className=".introduction__input--label">Introduce Yourself</label>
-                                        </>
-                                        )}
-                                        </>
-                                    )}
-                                    {showLocation && (
-                                        <input
-                                            type="text"
-                                            value={location}
-                                            onChange={(e) => setLocation(e.target.value)}
-                                            placeholder="Enter Your Location"
-                                            className="introduction__input text-black placeholder:text-black"
-                                        />
-                                    )}
+
+                                {!showLocation && (
+                    <>
+                      {!showLocation && (
+                        <>
+                          <input
+                            type="text"
+                            value={name}
+                            onFocus={() => setIsFocused(true)}
+                            onBlur={() => setIsFocused(false)}                      
+                            style={{
+                              width: "calc((18ch - 5.5ch))",
+                              fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
+                            }}
+                            onChange={(e) => setName(e.target.value)}
+                            className="border-b-[1px] bg-transparent border-[#1a1b1c] py-[5px] text-center outline-none text-[#1a1b1c] border-solid leading-[1] tracking-[-.07em]"
+                          />
+                          <label
+                            style={{
+                              width: `calc((18ch - 5.5ch))`,
+                              fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
+                            }}
+                            className={ `text-[#1a1b1c] transition-all ${isFocused || name.lenght > 1 ? 'opacity-0' : "opacity-1" }
+                              text-center leading-[1.33] left-0 top-[5px] absolute name-label pointer-events-none tracking-[-.07em] `}
+                          >
+                            Introduce Yourself
+                          </label>
+                        </>
+                      )}
+                    </>
+                  )}
+
+
                                 </div>
                             </form>
                         </div>

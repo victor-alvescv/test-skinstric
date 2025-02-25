@@ -185,24 +185,6 @@ form {
   clip-path: inset(0%);
 }
 
-.introduction__input--label {
-  transition: opacity 0.15s cubic-bezier(0.08, 0.5, 0.44, 0.96);
-  width: 12.5ch;
-  color: #1a1b1c;
-  text-align: center;
-  font-size: clamp(44px, 12px + 2.5vw, 60px);
-  letter-spacing: -0.07em;
-  line-height: 1.33;
-  font-weight: 400;
-  left: 0;
-  margin-bottom: 0;
-  margin-top: 0;
-  pointer-events: none;
-  display: block;
-  top: 5%;
-  position: absolute;
-}
-
 .dotted-square:after,
 .dotted-square:before {
   --base-rotation: 0deg;
