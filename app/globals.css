@@ -76,13 +76,10 @@ a {
 .dotted-square.is-not-expanded:before,
 .dotted-square:before {
   --base-transform: translate(-50%, -50%);
-
   opacity: 0.6;
-
   transform: var(--base-transform);
-
   transition: transform var(--transition-duration)
-    cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2);
+  cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2);
 }
 
 .dotted-square.is-animated:before {
@@ -95,14 +92,11 @@ a {
 
 .dotted-square.is-expanded:after {
   --base-transform: translate(-50%, -50%) scale(1.2);
-
   opacity: 0.3;
-
   transform: var(--base-transform);
-
   transition: transform var(--transition-duration)
-      cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2),
-    opacity 0s calc(var(--transition-duration) / 2);
+  cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2),
+  opacity 0s calc(var(--transition-duration) / 2);
 }
 
 .dotted-square.is-not-expanded:after,
@@ -172,7 +166,6 @@ a {
 .introduction__input {
   border-bottom: 1px solid;
   line-height: 1;
-  width: 12.5ch;
   color: #1a1b1c;
   text-align: center;
   font-size: clamp(44px, 12px + 2.5vw, 60px);

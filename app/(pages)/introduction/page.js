@@ -24,6 +24,10 @@ function Introduction() {
         setIsTyping(true);
     };
 
+    const InputField = () => {
+        const [isFocused, setIsFocused] = useState(false);
+    }
+
   return (
     <>
       <div className="flex flex-col flex-auto">
@@ -66,11 +70,13 @@ function Introduction() {
                                         <>
                                         <input
                                             type="text"
+                                            onFocus={() => setIsFocused(true)}
+                                            onBlur={() => setIsFocused(false)}
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                            placeholder="Introduce Yourself"
                                             className="introduction__input text-black placeholder:text-black"
                                         />
+                                        <label className=".introduction__input--label">Introduce Yourself</label>
                                         </>
                                         )}
                                         </>
