@@ -104,7 +104,7 @@ function Introduction() {
                                     <span>BACK</span>
                                 </button>
                             </div>
-                            <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
+                            <div className="ml-auto flex-none flex justify-end git add flex-shrink basis-1/4 pr-2.5 text-color-color">
                                 {!showLocation && name && (
                                     <button onClick={handleProceed} className="button__proceed">
                                         <span className="button__icon--square">
