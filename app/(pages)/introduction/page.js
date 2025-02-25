@@ -84,7 +84,7 @@ function Introduction() {
                               width: `calc((18ch - 5.5ch))`,
                               fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
                             }}
-                            className={ `text-[#1a1b1c] transition-all ${isFocused || name.lenght > 1 ? 'opacity-0' : "opacity-1" }
+                            className={ `text-[#1a1b1c] transition-all ${isFocused || name.length > 1 ? 'opacity-0' : "opacity-1" }
                               text-center leading-[1.33] left-0 top-[5px] absolute name-label pointer-events-none tracking-[-.07em] `}
                           >
                             Introduce Yourself
