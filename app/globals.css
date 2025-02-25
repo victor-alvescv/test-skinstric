@@ -292,6 +292,67 @@ form {
   z-index: -1;
 }
 
+button {
+  background-color: #0000;
+  border: 0;
+  font-family: inherit;
+  padding: 0;
+  user-select: none;
+  -webkit-appearance: button;
+  margin: 0;
+  border-radius: 0;
+}
+
+.button__proceed {
+  cursor: pointer;
+  color: #1a1b1c;
+  --color-default: #1a1b1c;
+  --color-hover: var(--color-default);
+  --color-active: var(--color-hover);
+  --color-disabled: #a0a4ab;
+  --color: var(--color-default);
+  --outline-color: #1a1b1c;
+  --text-offset-x: 18px;
+  --text-translate-x: 28px;
+  --icon-size: 24px;
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .2s ease;
+  font-size: clamp(10px, 2px + .625vw, 14px);
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+
+.button__icon--square {
+  order: 1;
+  flex-shrink: 0;
+  height: var(--icon-size);
+  width: var(--icon-size);
+}
+
+.button__icon--square-inner {
+  align-items: center;
+  display: inline-flex;
+  height: inherit;
+  justify-content: center;
+  padding: calc(var(--icon-size)* .35);
+  position: relative;
+  transform: rotate(45deg);
+  width: inherit;
+}
+
+svg {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
