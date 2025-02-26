@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import axios from 'axios';
 
 
 
@@ -24,6 +25,18 @@ function Introduction() {
     const handleClick = () => {
         setIsTyping(true);
     };
+
+    const postData = async () => {
+    try {
+      const response = await axios.post('https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne', {
+        name:name,
+        location: location
+      });
+    } catch (error) {
+      console.error('Error:', error.response ? error.response.data : error.message);
+    }
+    };
+
   
 
   return (
@@ -63,37 +76,70 @@ function Introduction() {
                             <form>
                                 <div className="py-[5px] relative">
 
-                                {!showLocation && (
-                    <>
-                      {!showLocation && (
-                        <>
-                          <input
-                            type="text"
-                            value={name}
-                            onFocus={() => setIsFocused(true)}
-                            onBlur={() => setIsFocused(false)}                      
-                            style={{
-                              width: "calc((18ch - 5.5ch))",
-                              fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
-                            }}
-                            onChange={(e) => setName(e.target.value)}
-                            className="border-b-[1px] bg-transparent border-[#1a1b1c] py-[5px] text-center outline-none text-[#1a1b1c] border-solid leading-[1] tracking-[-.07em]"
-                          />
-                          <label
-                            style={{
-                              width: `calc((18ch - 5.5ch))`,
-                              fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
-                            }}
-                            className={ `text-[#1a1b1c] transition-all ${isFocused || name.length > 1 ? 'opacity-0' : "opacity-1" }
+                    {!showLocation ? (
+                      <>
+                        <input
+                          type="text"
+                          value={name}
+                          onFocus={() => setIsFocused(true)}
+                          onBlur={() => setIsFocused(false)}
+                          style={{
+                            width: "calc((18ch - 5.5ch))",
+                            fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
+                          }}
+                          onChange={(e) => setName(e.target.value)}
+                          className="border-b-[1px] bg-transparent border-[#1a1b1c] py-[5px] text-center outline-none text-[#1a1b1c] border-solid leading-[1] tracking-[-.07em]"
+                        />
+                        <label
+                          style={{
+                            width: `calc((18ch - 5.5ch))`,
+                            fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
+                          }}
+                          className={`text-[#1a1b1c] transition-all ${
+                            isFocused || name.length > 1
+                              ? "opacity-0"
+                              : "opacity-1"
+                          }
                               text-center leading-[1.33] left-0 top-[5px] absolute name-label pointer-events-none tracking-[-.07em] `}
-                          >
-                            Introduce Yourself
-                          </label>
-                        </>
-                      )}
-                    </>
-                  )}
+                        >
+                          Introduce Yourself
+                        </label>
+                      </>
+                    ) : (
+                      <>
+                        <input
+                          style={{
+                            width: "calc((21ch - 5.5ch))",
+                            fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
+                          }}
+                          placeholder={
+                            isFocused && name.length > 1
+                              ? "Enter a location"
+                              : ""
+                          }
+                          onFocus={() => setIsFocused(true)}
+                          onBlur={() => setIsFocused(false)}
+                          onChange={(e) => setLocation(e.target.value)}
+                          className="border-b-[1px] bg-transparent border-[#1a1b1c] py-[5px] text-center outline-none text-[#1a1b1c] border-solid leading-[1] tracking-[-.07em]"
+                          type="text"
+                          value={location}
+                        ></input>
 
+                        <label
+                          style={{
+                            width: `calc((21ch - 5.5ch))`,
+                            fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
+                          }}
+                          className={`text-[#1a1b1c] ${
+                            isFocused || location.length > 0
+                              ? "opacity-0"
+                              : "opacity-1"
+                          } text-center transition-all leading-[1.33] left-0 top-[5px] name-label absolute pointer-events-none tracking-[-.07em]`}
+                        >
+                          Where are you from?
+                        </label>
+                      </>
+                    )}
 
                                 </div>
                             </form>
