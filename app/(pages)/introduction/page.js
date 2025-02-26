@@ -11,6 +11,8 @@ function Introduction() {
     const [location, setLocation] = useState("");
     const [showLocation, setShowLocation] = useState(false);
     const [isFocused, setIsFocused] = useState(false);
+    const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete | null>(null)
+    const GOOGLE_MAPS_API_KEY = "AIzaSyDRRUxxF3WJwDJwmuSKZHM61vqIc4UXdAo"
 
     const handleProceed = () => {
         setShowLocation(true);
