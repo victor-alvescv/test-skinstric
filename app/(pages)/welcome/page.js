@@ -28,8 +28,8 @@ function Welcome() {
         <div className="flex flex-auto flex-col pb-9 relative mx-auto max-w-[2560px] px-8 w-full">
           <div className="absolute left-8 top-[86px] block overflow-hidden">
             <h1
-              className="font-semibold tracking-[-.02em] leading-5"
-              style={{ fontSize: "clamp(10px,-2px + .9375vw,16px)" }}
+              className="font-semibold tracking-[-.06em] leading-none"
+              style={{ fontSize: "clamp(40px, -24px + 5vw, 72px)" }}
             >
               WELCOME NAME
             </h1>
