@@ -77,7 +77,7 @@ a {
   opacity: 0.6;
   transform: var(--base-transform);
   transition: transform var(--transition-duration)
-  cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2);
+    cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2);
 }
 
 .dotted-square.is-animated:before {
@@ -93,8 +93,8 @@ a {
   opacity: 0.3;
   transform: var(--base-transform);
   transition: transform var(--transition-duration)
-  cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2),
-  opacity 0s calc(var(--transition-duration) / 2);
+      cubic-bezier(0.08, 0.5, 0.44, 0.96) calc(var(--transition-duration) / 2),
+    opacity 0s calc(var(--transition-duration) / 2);
 }
 
 .dotted-square.is-not-expanded:after,
@@ -319,11 +319,11 @@ button {
   flex-shrink: 0;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color .2s ease;
-  font-size: clamp(10px, 2px + .625vw, 14px);
+  transition: color 0.2s ease;
+  font-size: clamp(10px, 2px + 0.625vw, 14px);
   line-height: 1.6;
   font-weight: 600;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
 }
 
 .button__back {
@@ -343,11 +343,11 @@ button {
   flex-shrink: 0;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color .2s ease;
-  font-size: clamp(10px, 2px + .625vw, 14px);
+  transition: color 0.2s ease;
+  font-size: clamp(10px, 2px + 0.625vw, 14px);
   line-height: 1.6;
   font-weight: 600;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
 }
 
 .button__icon--square {
@@ -362,7 +362,7 @@ button {
   display: inline-flex;
   height: inherit;
   justify-content: center;
-  padding: calc(var(--icon-size)* .35);
+  padding: calc(var(--icon-size) * 0.35);
   position: relative;
   width: inherit;
 }
@@ -381,6 +381,45 @@ svg {
   vertical-align: middle;
 }
 
+.consult__button {
+  cursor: pointer;
+  --color-default: #fcfcfc;
+  --bg-color-default: #1a1b1c;
+  --bg-color-hover: #2e2f31;
+  --bg-color-active: #333536;
+  --bg-color-disabled: #c1c2c3;
+  --bg-color: var(--bg-color-default);
+  --border-color-default: var(--bg-color-default);
+  --border-color-hover: var(--border-color-default);
+  --border-color-active: var(--border-color-hover);
+  --border-color-disabled: var(--bg-color-disabled);
+  --border-color: var(--border-color-default);
+  --color-hover: var(--color-default);
+  --color-active: var(--color-hover);
+  --color-disabled: #a0a4ab;
+  --color: var(--color-default);
+  --outline-color: #1a1b1c;
+  --padding-x: 16px;
+  --padding-y: 8px;
+  --height: calc(1.6em + var(--padding-y) * 2);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  color: #fcfcfc;
+  display: inline-block;
+  flex-shrink: 0;
+  height: var(--height);
+  overflow: clip;
+  padding: var(--padding-y) var(--padding-x);
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color .3sease, border-color .3sease, background-color .3sease;
+  font-size: clamp(10px, 2px + .625vw, 14px);
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
 
 @media (prefers-color-scheme: dark) {
   html {

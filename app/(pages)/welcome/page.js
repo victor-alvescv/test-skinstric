@@ -15,13 +15,13 @@ function Welcome() {
           <Link
             href="/"
             className="font-bold text-[10px]"
-            style={{ fontSize: "clamp(10px,-2px + .9375vw,16px)" }}
+            style={{ fontSize: "clamp(10px, 2px + 0.625vw, 14px)" }}
           >
             SKINSTRIC
           </Link>
-       </div>
-          <div className="flex items-center relative z-30 ">
-          <button></button>
+        </div>
+        <div className="flex items-center relative z-30 ">
+          <button className="consult__button">CONSULT CHEMIST</button>
         </div>
       </nav>
       <main className="relative flex flex-col flex-auto">
