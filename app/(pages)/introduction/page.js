@@ -45,6 +45,7 @@ function Introduction() {
         setLocation(place.name);
       }
     }
+    setisLocationSelected(true);
     postData()
   };
 
