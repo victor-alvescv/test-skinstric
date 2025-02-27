@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { Camera, Image as ImageIcon } from "lucide-react";
 import Square from "@/components/Square";
-import { useRouter } from "next/navigation";
+import { useRouter } from  'next/navigation';
 import { gsap } from "gsap";
 
 const continuousRotation = (target, duration) => {

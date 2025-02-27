@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
 import { LoadScript, Autocomplete } from "@react-google-maps/api";
+import { useRouter } from  'next/navigation';
 
 function Introduction() {
   const [name, setName] = useState("");
@@ -11,6 +12,9 @@ function Introduction() {
   const [showLocation, setShowLocation] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [autocomplete, setAutocomplete] = useState(null);
+  const [isLocationSelected, setisLocationSelected] = useState(false);  
+  const router = useRouter(); 
+
 
   const GOOGLE_MAPS_API_KEY = "AIzaSyDRRUxxF3WJwDJwmuSKZHM61vqIc4UXdAo";
 
@@ -43,6 +47,13 @@ function Introduction() {
     }
     postData()
   };
+
+const handlePlaceProceed = () => {
+  if (isLocationSelected) {
+    router.push("/analysis");
+  }
+};
+
 
   const postData = async () => {
     try {
@@ -226,6 +237,29 @@ function Introduction() {
                     <span className="padding-right: 18px transition-transform duration-500 ease-custom-bezier">
                       PROCEED
                     </span>
+                  </button>
+                )}
+
+{showLocation && isLocationSelected && (
+                  <button
+                    onClick={handlePlaceProceed}
+                    className="button__proceed"
+                  >
+                    <span className="button__icon--square">
+                      <span className="button__icon--square-inner button__icon-right">
+                        <svg
+                          className="w-3 h-3 relative -top-1 left-1 transform rotate-90"
+                          viewBox="0 0 11 12"
+                          fill="#1A1B1C"
+                        >
+                          <path
+                            d="M10.145 6 .716 11.444V.556L10.145 6Z"
+                            fill="current"
+                          ></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span>PROCEED</span>
                   </button>
                 )}
               </div>
