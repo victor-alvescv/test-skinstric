@@ -33,6 +33,20 @@ function Welcome() {
             >
               WELCOME NAME
             </h1>
+            <span className="max-w-[272px] block mt-custom-10">Pick one of the two options to 
+              <br/>
+              navigate our skincare platform.
+            </span>
+
+          </div>
+
+          <div> 
+            <div className="max-w-[448px] border border-black"> 
+
+            </div>
+
+
+
           </div>
 
 
