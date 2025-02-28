@@ -421,6 +421,13 @@ svg {
   letter-spacing: -.02em;
 }
 
+.access__button {
+ cursor: pointer;
+ --square-size: 20vw;
+ --icon-size: 112px;
+ position: relative;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
