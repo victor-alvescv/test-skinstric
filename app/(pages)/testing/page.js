@@ -122,6 +122,7 @@ function Testing() {
                       ></path>
                     </svg>
                   </span>
+                  <span className="absolute top-[85%] right-[95%] text-right w-[136px] uppercase text-[clamp(10px,-6px+1.5625vw,14px)] font-normal tracking-0 leading-[1.71]">ALLOW A.I. <br/> ACCESS TO GALLERY</span>
                 </span>
               </button>
               {image && (
