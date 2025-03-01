@@ -17,6 +17,10 @@ function Testing() {
     }
   };
 
+  const handleFileChange = (e) =>{
+    const file = e.target.files?.[0];
+  }
+
   return (
     <>
       <div className="flex flex-col flex-auto">
@@ -60,7 +64,7 @@ function Testing() {
 {/* LEFT IMAGE-BUTTON */}
 
               <button className="access__button">
-                <span className="dotted-square is-expanded is-animated">
+                <span className="dotted-square is-expanded is-animated">  </span>
                   <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px] flex justify-center items-center">
                     <svg
                       className="w-[136px] h-[136px] absolute  transform rotate-90"
@@ -84,7 +88,7 @@ function Testing() {
                     />
                   </span>
                   <span className="absolute bottom-[80%] left-[92.5%] text-left w-[136px] uppercase text-[clamp(10px,-6px+1.5625vw,14px)] font-normal tracking-0 leading-[1.71]">ALLOW A.I. <br/> TO SCAN YOUR FACE</span>
-                </span>
+               
               </button>
 
 {/* RIGHT IMAGE-BUTTON */}
@@ -94,7 +98,7 @@ function Testing() {
                 className="access__button"
                 onClick={() => document.getElementById("fileInput").click()}
               >
-                <span className="dotted-square is-expanded is-animated">
+                <span className="dotted-square is-expanded is-animated"> </span>
                   <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px]">
                     <svg
                       className="w-[136px] h-[136px] relative -top-1 left-1 transform rotate-90"
@@ -123,7 +127,7 @@ function Testing() {
                     </svg>
                   </span>
                   <span className="absolute top-[85%] right-[95%] text-right w-[136px] uppercase text-[clamp(10px,-6px+1.5625vw,14px)] font-normal tracking-0 leading-[1.71]">ALLOW A.I. <br/> ACCESS TO GALLERY</span>
-                </span>
+               
               </button>
               {image && (
                 <img
