@@ -57,6 +57,8 @@ function Testing() {
                 id="fileInput"
               />
 
+{/* LEFT IMAGE-BUTTON */}
+
               <button className="access__button">
                 <span className="dotted-square is-expanded is-animated">
                   <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px] flex justify-center items-center">
@@ -81,8 +83,11 @@ function Testing() {
                       alt="Camera shutter"
                     />
                   </span>
+                  <span className="absolute bottom-[80%] left-[92.5%] text-left w-[136px] uppercase text-[clamp(10px,-6px+1.5625vw,14px)] font-normal tracking-0 leading-[1.71]">ALLOW A.I. <br/> TO SCAN YOUR FACE</span>
                 </span>
               </button>
+
+{/* RIGHT IMAGE-BUTTON */}
 
               {/* Display Selected Image */}
               <button
