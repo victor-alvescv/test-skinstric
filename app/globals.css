@@ -428,6 +428,16 @@ svg {
  position: relative;
 }
 
+.visually__hidden {
+  clip: rect(0 0 0 0) !important;
+  border: 0 !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

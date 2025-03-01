@@ -101,7 +101,7 @@ function Testing() {
                 <span className="dotted-square is-expanded is-animated"> </span>
                   <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px]">
                     <svg
-                      className="w-[136px] h-[136px] relative -top-1 left-1 transform rotate-90"
+                      className="w-[136px] h-[136px] relative -top-1 left-1 transform"
                       viewBox="0 0 136 136"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -136,6 +136,7 @@ function Testing() {
                   className="w-20 h-20 object-cover"
                 />
               )}
+              <input id="photo-upload-input" type="file" accept=".jpeg,.jpeg,.png" className="visually__hidden"></input>
             </div>
           </div>
         </main>
