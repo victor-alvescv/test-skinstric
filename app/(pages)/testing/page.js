@@ -35,7 +35,7 @@ function Testing() {
             </Link>
           </div>
           <div className="flex items-center relative z-30">
-            <button className="consult__button">CONSULT CHEMIST</button>
+            <button className="consult__button" disabled>CONSULT CHEMIST</button>
           </div>
         </nav>
 
