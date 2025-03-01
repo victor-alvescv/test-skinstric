@@ -85,7 +85,7 @@ function Testing() {
               </button>
 
               {/* Display Selected Image */}
-              <button className="access__button">
+              <button className="access__button"  onClick={() => document.getElementById("fileInput").click()}>             
                 <span className="dotted-square is-expanded is-animated">
                   <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px]">
                     <svg
