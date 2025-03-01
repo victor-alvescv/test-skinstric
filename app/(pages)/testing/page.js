@@ -57,7 +57,7 @@ function Testing() {
                 id="fileInput"
               />
 
-<button className="access__button">
+              <button className="access__button">
                 <span className="dotted-square is-expanded is-animated">
                   <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px] flex justify-center items-center">
                     <svg
@@ -85,7 +85,10 @@ function Testing() {
               </button>
 
               {/* Display Selected Image */}
-              <button className="access__button"  onClick={() => document.getElementById("fileInput").click()}>             
+              <button
+                className="access__button"
+                onClick={() => document.getElementById("fileInput").click()}
+              >
                 <span className="dotted-square is-expanded is-animated">
                   <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px]">
                     <svg
@@ -101,11 +104,17 @@ function Testing() {
                         r="57.786"
                         stroke="#1A1B1C"
                       ></circle>
-                      <circle cx="68" cy="68" r="51" ></circle>
+                      <circle cx="68" cy="68" r="51"></circle>
                       <path
-                                d="M78.321 68c7.042 0 12.75-5.708 12.75-12.75S85.363 42.5 78.321 42.5c-7.041 0-12.75 5.708-12.75 12.75S71.28 68 78.321 68Z"
-                                fill="#1A1B1C"
-                              ></path>
+                        d="M78.321 68c7.042 0 12.75-5.708 12.75-12.75S85.363 42.5 78.321 42.5c-7.041 0-12.75 5.708-12.75 12.75S71.28 68 78.321 68Z"
+                        fill="#1A1B1C"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M17 68c0 3.96.451 7.815 1.306 11.516C23.526 102.136 43.794 119 68 119c26.867 0 48.882-20.776 50.856-47.138A51.96 51.96 0 0 0 119 68c0-28.166-22.834-51-51-51S17 39.834 17 68Zm18.337-.274L19.382 78.77A49.962 49.962 0 0 1 18.215 68c0-27.496 22.29-49.786 49.786-49.786 27.496 0 49.786 22.29 49.786 49.786 0 1.541-.07 3.066-.207 4.572l-34.634 19.24a7.286 7.286 0 0 1-7.91-.54l-31.18-23.385a7.286 7.286 0 0 0-8.518-.161Z"
+                        fill="#1A1B1C"
+                      ></path>
                     </svg>
                   </span>
                 </span>
