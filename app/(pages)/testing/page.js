@@ -139,6 +139,16 @@ function Testing() {
               <input id="photo-upload-input" type="file" accept=".jpeg,.jpeg,.png" className="visually__hidden"></input>
             </div>
           </div>
+          <div className="flex items-center justify-center flex-col absolute inset-0 top-[60%]">
+          <img
+                      src="/preffered-cross.svg"
+                      className="w-[68px] h-[68px] relative z-10"
+                      alt="Preffered cross"
+                    />
+          <p className="text-xs opacity-40 pt-1">SELECT PREFFERED WAY</p>
+
+
+          </div>
         </main>
       </div>
     </>
