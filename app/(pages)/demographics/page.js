@@ -4,6 +4,8 @@ import { Link } from "lucide-react";
 import React, { useRef, useState } from "react";
 
 function Demographics() {
+
+    return (
     <>
     <div className="flex flex-col flex-auto">
       <nav className="items-center flex h-16 justify-between left-0 fixed top-0 w-full z-30 mx-auto max-w-[2560px] px-8">
@@ -33,8 +35,6 @@ function Demographics() {
           </div>
 
           <div className="flex justify-around mb-auto mt-auto pb-16">
-
-
  
           </div>
         </div>
@@ -42,6 +42,6 @@ function Demographics() {
       </main>
     </div>
   </>
-;
+    )
 }
 export default Demographics;
