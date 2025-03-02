@@ -98,7 +98,7 @@ function Testing() {
                 <span className="dotted-square is-expanded is-animated">  </span>
                   <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px] flex justify-center items-center hover:scale-75 transition-all duration-300 ease-in-out">
                     <svg
-                      className="width: 20vw; absolute  transform rotate-90"
+                      className=" absolute  transform rotate-90"
                       viewBox="0 0 136 136"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"

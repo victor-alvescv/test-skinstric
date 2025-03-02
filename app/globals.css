@@ -48,7 +48,7 @@ a {
 .dotted-square {
   --base-transform: translate(0);
   --base-rotation: 45deg;
-  --size: 200px;
+  --size: 250px;
   --transition-duration: 0.3s;
   display: block;
   height: var(--size);
