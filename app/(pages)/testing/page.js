@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { Router, useRouter } from "next/router";
 
 function Testing() {
   const [image, setImage] = useState(null);
+  const Router = useRouter;
 
   const handleImageChange = (event) => {
     const file = event.target.files?.[0];
@@ -19,7 +21,21 @@ function Testing() {
 
   const handleFileChange = (e) =>{
     const file = e.target.files?.[0];
-  }
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result;
+        setPreviewImage(base64String);
+        localStoragetItem("capturedImage", base64String);
+      };
+      reader.readAsDataURL(file);
+      };
+    };
+
+    const handleCameraAccess = () => {
+      Router.push("/aicamera");
+    };
+  
 
   return (
     <>
@@ -63,7 +79,7 @@ function Testing() {
 
 {/* LEFT IMAGE-BUTTON */}
 
-              <button className="access__button">
+              <button className="access__button" onClick={handleCameraAccess}>
                 <span className="dotted-square is-expanded is-animated">  </span>
                   <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px] flex justify-center items-center">
                     <svg
