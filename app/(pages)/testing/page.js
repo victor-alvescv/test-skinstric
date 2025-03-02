@@ -6,7 +6,7 @@ import { Router, useRouter } from "next/router";
 
 function Testing() {
   const [image, setImage] = useState(null);
-  const Router = useRouter;
+ 
 
   const handleImageChange = (event) => {
     const file = event.target.files?.[0];

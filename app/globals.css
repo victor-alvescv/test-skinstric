@@ -438,6 +438,20 @@ svg {
   width: 1px !important;
 }
 
+.loading__screen {
+  align-items: center;
+  background-color: #fcfcfc;
+  color: #1a1b1c;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
