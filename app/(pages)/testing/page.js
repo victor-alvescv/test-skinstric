@@ -1,12 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { Router, useRouter } from "next/router";
+import { useRouter } from  'next/navigation';
 
 function Testing() {
   const [image, setImage] = useState(null);
- 
+  const router = useRouter(); 
+  const photoRef = useRef(null);
+
+  const [hasPhoto, setHasPhoto] = useState(false);
+
 
   const handleImageChange = (event) => {
     const file = event.target.files?.[0];
@@ -33,8 +37,23 @@ function Testing() {
     };
 
     const handleCameraAccess = () => {
-      Router.push("/aicamera");
+      router.push("/aicamera");
     };
+
+    const takePhoto = () => {
+      const width = 414;
+      const height = width / (16/9);
+
+      let photo = photoRef.current;
+      photo.width = width;
+      photo.height = height;
+
+      let ctx = photo.getContext('2d');
+
+    }
+
+    
+
   
 
   return (
@@ -81,7 +100,7 @@ function Testing() {
 
               <button className="access__button" onClick={handleCameraAccess}>
                 <span className="dotted-square is-expanded is-animated">  </span>
-                  <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px] flex justify-center items-center">
+                  <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px] flex justify-center items-center hover:scale-75 transition-all duration-300 ease-in-out">
                     <svg
                       className="w-[136px] h-[136px] absolute  transform rotate-90"
                       viewBox="0 0 136 136"
@@ -115,7 +134,7 @@ function Testing() {
                 onClick={() => document.getElementById("fileInput").click()}
               >
                 <span className="dotted-square is-expanded is-animated"> </span>
-                  <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px]">
+                  <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[112px] hover:scale-75 transition-all duration-300 ease-in-out">
                     <svg
                       className="w-[136px] h-[136px] relative -top-1 left-1 transform"
                       viewBox="0 0 136 136"
