@@ -26,7 +26,7 @@ function Demographics() {
       <main className="relative flex flex-col flex-auto">
         <div className="flex flex-auto flex-col pb-9 relative mx-auto max-w-[2560px] px-8 w-full">
           
-          <div className="flext-start absolute left-8 top-[86px] block overflow-hidden">
+          <div className="flex items-start flex-col absolute left-8 top-[86px] overflow-hidden">
             <h1 className="font-semibold tracking-[-.06em] leading-24 text-base">
               DEMOGRAPHICS
             </h1>
@@ -35,8 +35,29 @@ function Demographics() {
             </span>
           </div>
 
-          <div className="flex justify-around mb-auto mt-auto pb-16">
- 
+          <div className="flex flex-col flex-1 mt-24 pb-20">
+              <div className="flex flex-1">
+                    <div className="w-[10vw] flex shrink-0">
+                        <ul className="list-none pl-0 m-0 p-0">
+                            <li className="mb-2">
+                                <button>
+                                    <span>
+                                        <span>
+                                            South Asian
+                                        </span>
+                                        <span>
+                                            Race
+                                        </span>
+                                    </span>
+                                </button>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+              </div> 
           </div>
         </div>
         

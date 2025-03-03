@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 function Aicamera () {
@@ -11,9 +11,11 @@ function Aicamera () {
                 const stream = await navigator.mediaDevices.getUserMedia({
                     video: true
                 });
+                setCameraAccess(true);
                 console.log("Camera access granted", stream);
             }   catch (error) {
                 console.error("Camera access denied", error);
+                setCameraAccess(false);
             }
         }
         requestCameraAccess();
@@ -25,7 +27,9 @@ function Aicamera () {
             <div className="loading__screen">
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <span className="dotted-square is-expanded is-animated --size: 19.7vw;"> </span>
-                    <div className="absolute left-1/2 top-1/2 max-w-[227px] text-center transform -translate-x-1/2 -translate-y-1/2 font-semibold">SETTING UP CAMERA...</div>
+                    <div className="absolute left-1/2 top-1/2 max-w-[227px] text-center transform -translate-x-1/2 -translate-y-1/2 font-semibold">
+                    {cameraAccess === false ? "CAMERA ACCESS IS REQUIRED!" : "SETTING UP CAMERA..."}
+                    </div>
 
                 </div>
         </div>
