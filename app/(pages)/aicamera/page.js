@@ -23,8 +23,17 @@ function Aicamera () {
     }, []);
 
     const startCountdown = useCallback(() => {
-        
-    })
+        setState((prev) => ({ ...prev, isCapturing: true, countdown: 3}));
+        const interval = setInterval(() => {
+            setState((prev) => {
+                if (prev.countdown === 1) {
+                    clearInterval(interval);
+                    return { ...prev, countdown: 0 };
+                }
+                return { ...prev, countdown: prev.countdown -1 };
+            });
+        }, 1000) 
+    }, []);
 
   return (
     <body className="flex flex-col m-0">
@@ -39,7 +48,7 @@ function Aicamera () {
                         muted
                         className="w-full h-full object-cover"
                     />
-                    <button className="absolute right-6 top-1/2 flex items-center justify-center w-16 h-16 bg-white text-green-500 rounded-full shadow-lg">
+                    <button className="absolute right-6 top-1/2 flex items-center justify-center w-16 h-16 bg-white text-green-500 rounded-full shadow-lg onClick={startCountdown}">
                         <svg
                             className="w-[24px] h-[24px] relative -top-1 left-1 transform"
                             viewBox="0 0 24 24"
