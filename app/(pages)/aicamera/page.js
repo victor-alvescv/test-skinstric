@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 
 function Aicamera () {
     const [cameraAccess, setCameraAccess] = useState(false);
+    const videoRef =useRef(null);
 
     useEffect(() => {
         async function requestCameraAccess() {
