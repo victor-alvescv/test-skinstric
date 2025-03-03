@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+
 
 function Aicamera () {
+    const [cameraAccess, setCameraAccess] = useState(false);
 
     useEffect(() => {
         async function requestCameraAccess() {
