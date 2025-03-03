@@ -35,7 +35,7 @@ function Demographics() {
             </span>
           </div>
 
-          <div className="flex flex-col flex-1 mt-24 pb-20">
+          <div className="flex flex-col flex-1 mt-10 pb-20">
               <div className="flex flex-1">
                     <div className="w-[10vw] flex shrink-0">
                         <ul className="list-none pl-0 m-0 p-0">
