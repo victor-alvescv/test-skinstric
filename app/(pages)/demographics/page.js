@@ -25,7 +25,8 @@ function Demographics() {
 
       <main className="relative flex flex-col flex-auto">
         <div className="flex flex-auto flex-col pb-9 relative mx-auto max-w-[2560px] px-8 w-full">
-          <div className="absolute left-8 top-[86px] block overflow-hidden">
+          
+          <div className="flext-start absolute left-8 top-[86px] block overflow-hidden">
             <h1 className="font-semibold tracking-[-.06em] leading-24 text-base">
               DEMOGRAPHICS
             </h1>

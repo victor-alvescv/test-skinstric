@@ -3,6 +3,20 @@ import React from "react";
 
 function Aicamera () {
 
+    useEffect(() => {
+        async function requestCameraAccess() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: true
+                });
+                console.log("Camera access granted", stream);
+            }   catch (error) {
+                console.error("Camera access denied", error);
+            }
+        }
+        requestCameraAccess();
+    }, []);
+
   return (
     <body className="flex flex-col m-0">
         <main className="flex flex-col relative z-auto flex-1">
