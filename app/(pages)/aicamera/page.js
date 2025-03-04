@@ -54,7 +54,9 @@ function Aicamera() {
             </div>
           </div>
 
-          <button className="absolute right-6 top-1/2 flex items-center justify-center w-16 h-16 bg-white text-green-500 rounded-full shadow-lg onClick={startCountdown}">
+          {cameraAccess === true && (
+            <>
+             <button className="absolute right-6 top-1/2 flex items-center justify-center w-16 h-16 bg-white text-green-500 rounded-full shadow-lg onClick={startCountdown}">
                         <svg
                             className="w-[24px] h-[24px] relative -top-1 left-1 transform"
                             viewBox="0 0 24 24"
@@ -73,13 +75,10 @@ function Aicamera() {
                         </svg>     
                                    
                     </button>
-                    <span className="absolute right-6 top-1/3 flex items-center justify-center">TAKE PICTURE</span>    
+                    <span className="absolute right-6 top-1/3 flex items-center justify-center">TAKE PICTURE</span>               
             
-
-
-
-
-
+            </>
+          )}        
 
         </div>
       </main>
