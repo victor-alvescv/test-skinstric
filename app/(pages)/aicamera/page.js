@@ -1,54 +1,60 @@
 "use client";
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState, useRef } from "react";
 
+function Aicamera() {
+  const [cameraAccess, setCameraAccess] = useState(null);
+  const videoRef = useRef(null);
 
-function Aicamera () {
-    const [cameraAccess, setCameraAccess] = useState(false);
-    const videoRef =useRef(null);
-
-    useEffect(() => {
-        async function requestCameraAccess() {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({
-                    video: true
-                });
-                setCameraAccess(true);
-                console.log("Camera access granted", stream);
-            }   catch (error) {
-                console.error("Camera access denied", error);
-                setCameraAccess(false);
-            }
+  useEffect(() => {
+    async function requestCameraAccess() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+        });
+        setCameraAccess(true);
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
         }
-        requestCameraAccess();
-    }, []);
+        console.log("Camera access granted", stream);
+      } catch (error) {
+        console.error("Camera access denied", error);
+        setCameraAccess(false);
+      }
+    }
 
-    const startCountdown = useCallback(() => {
-        setState((prev) => ({ ...prev, isCapturing: true, countdown: 3}));
-        const interval = setInterval(() => {
-            setState((prev) => {
-                if (prev.countdown === 1) {
-                    clearInterval(interval);
-                    return { ...prev, countdown: 0 };
-                }
-                return { ...prev, countdown: prev.countdown -1 };
-            });
-        }, 1000) 
-    }, []);
+    requestCameraAccess();
+  }, []);
+
+  useEffect(() => {
+    console.log(cameraAccess);
+  }, [cameraAccess]);
 
   return (
-    <body className="flex flex-col m-0">
-        <main className="flex flex-col relative z-auto flex-1">
-            <div className="loading__screen">
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                   {cameraAccess && (
-                    <>
-                    <video
-                        ref={videoRef}
-                        autoPlay
-                        muted
-                        className="w-full h-full object-cover"
-                    />
-                    <button className="absolute right-6 top-1/2 flex items-center justify-center w-16 h-16 bg-white text-green-500 rounded-full shadow-lg onClick={startCountdown}">
+    <div className="flex flex-col m-0">
+      <main className="flex flex-col relative z-auto flex-1">
+        <div className="loading__screen">
+          <div className="absolute left-0 top-0 w-full h-full">
+            {/* Video element to display camera feed */}
+            {cameraAccess && (
+              <video
+                ref={videoRef}
+                autoPlay
+                muted
+                className="w-full h-full object-cover"
+              />
+            )}
+            <span className="dotted-square is-expanded is-animated --size: 19.7vw;">
+              {" "}
+            </span>
+            <div className="absolute left-1/2 top-1/2 max-w-[227px] text-center transform -translate-x-1/2 -translate-y-1/2 font-semibold">
+              {cameraAccess === false
+                ? "CAMERA ACCESS IS REQUIRED!"
+                : "SETTING UP CAMERA..."}
+            </div>
+          </div>
+
+          <button className="absolute right-6 top-1/2 flex items-center justify-center w-16 h-16 bg-white text-green-500 rounded-full shadow-lg onClick={startCountdown}">
                         <svg
                             className="w-[24px] h-[24px] relative -top-1 left-1 transform"
                             viewBox="0 0 24 24"
@@ -68,22 +74,17 @@ function Aicamera () {
                                    
                     </button>
                     <span className="absolute right-6 top-1/3 flex items-center justify-center">TAKE PICTURE</span>    
-                    </>
-                   )                   }
-                    <span className="dotted-square is-expanded is-animated --size: 19.7vw;">
-                        {" "}
-                    </span>
-                    <div className="absolute left-1/2 top-1/2 max-w-[227px] text-center transform -translate-x-1/2 -translate-y-1/2 font-semibold">
-                    {cameraAccess === false && "CAMERA ACCESS IS REQUIRED!"}
-                    {cameraAccess === null && "SETTING UP CAMERA..."}
-                    </div>
+            
 
-                </div>
+
+
+
+
+
         </div>
-        </main>
-
-    </body>
-  )
+      </main>
+    </div>
+  );
 }
 
 export default Aicamera;
