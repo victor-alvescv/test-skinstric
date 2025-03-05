@@ -50,7 +50,7 @@ function Aicamera() {
             <div className="absolute left-1/2 top-1/2 max-w-[227px] text-center transform -translate-x-1/2 -translate-y-1/2 font-semibold">
               {cameraAccess === false
                 ? "CAMERA ACCESS IS REQUIRED!"
-                : "SETTING UP CAMERA..."}
+                : ""}
             </div>
           </div>
 
@@ -71,11 +71,14 @@ function Aicamera() {
                                 d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
                                 fill="#1A1B1C"
                             ></path>
-                            <circle cx="12" cy="13" r="3"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
                         </svg>     
                                    
                     </button>
-                    <span className="absolute right-6 top-1/3 flex items-center justify-center">TAKE PICTURE</span>               
+                    <span className="absolute right-6 top-[600px] flex items-center justify-center">TAKE PICTURE</span>      
+
+                    
+                             
             
             </>
           )}        
