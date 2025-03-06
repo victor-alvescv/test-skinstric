@@ -359,7 +359,6 @@ button {
 
 .button__icon--square-inner {
   align-items: center;
-  display: inline-flex;
   height: inherit;
   justify-content: center;
   padding: calc(var(--icon-size) * 0.35);
