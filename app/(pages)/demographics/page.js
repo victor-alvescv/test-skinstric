@@ -189,7 +189,7 @@ function Demographics() {
                       className="w-[30px] h-[30px]"
                       alt="Arrow left"
                     />
-                  <span className="padding-right: 18px transition-transform duration-500 ease-custom-bezier">
+                  <span className="padding-right: 18px pt-1 transition-transform duration-500 ease-custom-bezier">
                     BACK
                   </span>
                   </div>
@@ -197,7 +197,7 @@ function Demographics() {
 
                 <button href="/" className="button__proceed">
                 <div className="flex justify-center item-center gap-2">
-                  <span className="padding-right: 18px transition-transform duration-500 ease-custom-bezier">
+                  <span className="padding-right: 18px pt-1 transition-transform duration-500 ease-custom-bezier">
                     HOME
                   </span>
                     <img

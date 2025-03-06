@@ -51,7 +51,7 @@ function Introduction() {
 
 const handlePlaceProceed = () => {
   if (isLocationSelected) {
-    router.push("/analysis");
+    router.push("/testing");
   }
 };
 
@@ -194,73 +194,52 @@ const handlePlaceProceed = () => {
             </div>
             <div className="items-center flex mt-auto">
               <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
-                <button onClick={handleBack} className="button__back">
-                  <span className="button__icon--square">
-                    <span className="button__icon--square-inner button__icon-left">
-                      <svg
-                        className="w-3 h-3 relative -top-1 left-1 transform rotate-90"
-                        viewBox="0 0 11 12"
-                        fill="#1A1B1C"
-                        xmlns="http://www.w3.org/2000/svg"
-                        role="img"
-                      >
-                        <path
-                          d="M10.145 6 .716 11.444V.556L10.145 6Z"
-                          fill="current"
-                        ></path>
-                      </svg>
-                    </span>
-                  </span>
-                  <span className="ml-2 padding-right: 18px transition-transform duration-500 ease-custom-bezier">
+
+
+              <button 
+                onClick={handleBack}
+                className="button__back">
+                  <div className="flex justify-center item-center gap-2">
+                    <img
+                      src="/arrow-left-circle.svg"
+                      className="w-[30px] h-[30px]"
+                      alt="Arrow left"
+                    />
+                  <span className="padding-right: 18px pt-1 transition-transform duration-500 ease-custom-bezier">
                     BACK
                   </span>
+                  </div>
                 </button>
+
               </div>
               <div className="ml-auto flex-none flex justify-end git add flex-shrink basis-1/4 pr-2.5 text-color-color">
                 {!showLocation && name && (
                   <button onClick={handleProceed} className="button__proceed">
-                    <span className="button__icon--square">
-                      <span className="button__icon--square-inner button__icon-right">
-                        <svg
-                          className="w-3 h-3 relative -top-1 left-1 transform rotate-90"
-                          viewBox="0 0 11 12"
-                          fill="#1A1B1C"
-                          xmlns="http://www.w3.org/2000/svg"
-                          role="img"
-                        >
-                          <path
-                            d="M10.145 6 .716 11.444V.556L10.145 6Z"
-                            fill="current"
-                          ></path>
-                        </svg>
-                      </span>
-                    </span>
-                    <span className="padding-right: 18px transition-transform duration-500 ease-custom-bezier">
+                  <div className="flex justify-center item-center gap-2">
+                    <span className="padding-right: 18px pt-1 transition-transform duration-500 ease-custom-bezier">
                       PROCEED
                     </span>
-                  </button>
+                      <img
+                        src="/arrow-right-circle.svg"
+                        className="w-[30px] h-[30px]"
+                        alt="Arrow right"
+                      />
+                    </div>
+                    </button>
                 )}
 
 {showLocation && isLocationSelected && (
-                  <button
-                    onClick={handlePlaceProceed}
-                    className="button__proceed"
-                  >
-                    <span className="button__icon--square">
-                      <span className="button__icon--square-inner button__icon-right">
-                        <svg
-                          className="w-3 h-3 relative -top-1 left-1 transform rotate-90"
-                          viewBox="0 0 11 12"
-                          fill="#1A1B1C"
-                        >
-                          <path
-                            d="M10.145 6 .716 11.444V.556L10.145 6Z"
-                            fill="current"
-                          ></path>
-                        </svg>
-                      </span>
-                    </span>
-                    <span>PROCEED</span>
+                <button onClick={handlePlaceProceed} className="button__proceed">
+                <div className="flex justify-center item-center gap-2">
+                  <span className="padding-right: 18px pt-1 transition-transform duration-500 ease-custom-bezier">
+                    PROCEED
+                  </span>
+                    <img
+                      src="/arrow-right-circle.svg"
+                      className="w-[30px] h-[30px]"
+                      alt="Arrow right"
+                    />
+                  </div>
                   </button>
                 )}
               </div>
