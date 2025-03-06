@@ -57,7 +57,7 @@ function Aicamera() {
 
         return () => clearInterval(timer);
     }
-  }, [countdown])
+  }, [countdown, isTakingSnapshot])
 
 
   
