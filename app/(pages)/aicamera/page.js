@@ -36,7 +36,6 @@ function Aicamera() {
   }, [cameraAccess]);
 
   const startCountdown = () => {
-    setIsTakingSnapshot(true);
     setCountdown(3);
     console.log("Starting countdown...");
   };
