@@ -181,31 +181,31 @@ function Demographics() {
             <div className="flex justify-between max-w-6xl mx-auto px-4 md:px-8">
 
             <button 
-                href="/testing"
+                href="/aicamera"
                 className="button__back">
-                  <span className="button__icon--square">
-                    <span className="button__icon--square-inner button__icon-left">
+                  <div className="flex justify-center item-center gap-2">
                     <img
                       src="/arrow-left-circle.svg"
-                      className="w-[68px] h-[68px]"
+                      className="w-[30px] h-[30px]"
                       alt="Arrow left"
                     />
-                    </span>
-                  </span>
-                  <span className="ml-2 padding-right: 18px transition-transform duration-500 ease-custom-bezier">
+                  <span className="padding-right: 18px transition-transform duration-500 ease-custom-bezier">
                     BACK
                   </span>
+                  </div>
                 </button>
 
                 <button href="/" className="button__proceed">
-                    <span className="button__icon--square">
-                      <span className="button__icon--square-inner button__icon-right">
-                      {/* <FontAwesomeIcon icon="fa-solid fa-arrow-left" /> */}
-                      </span>
-                    </span>
-                    <span className="padding-right: 18px transition-transform duration-500 ease-custom-bezier">
-                      HOME
-                    </span>
+                <div className="flex justify-center item-center gap-2">
+                  <span className="padding-right: 18px transition-transform duration-500 ease-custom-bezier">
+                    HOME
+                  </span>
+                    <img
+                      src="/arrow-right-circle.svg"
+                      className="w-[30px] h-[30px]"
+                      alt="Arrow right"
+                    />
+                  </div>
                   </button>
             </div>
           </div>
