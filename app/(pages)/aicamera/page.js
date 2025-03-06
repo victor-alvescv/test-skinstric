@@ -8,11 +8,7 @@ function Aicamera() {
   const videoRef = useRef(null);
   const [countdown, setCountdown] = useState(3);
 
-  const startCountdown = () => {
-    setIsTakingSnapshot(true);
-    setCountdown(3);
-    console.log("Starting countdown...");
-  }
+
 
   useEffect(() => {
     async function requestCameraAccess() {
@@ -30,7 +26,7 @@ function Aicamera() {
         console.error("Camera access denied", error);
         setCameraAccess(false);
       }
-    }
+    };
 
     requestCameraAccess();
   }, []);
@@ -39,9 +35,23 @@ function Aicamera() {
     console.log(cameraAccess);
   }, [cameraAccess]);
 
-
-
+  const startCountdown = () => {
+    setIsTakingSnapshot(true);
+    setCountdown(3);
     console.log("Starting countdown...");
+  };
+
+  useEffect(() => {
+    if (countdown > 0) {
+        const timer = setInterval(() => {
+            setCountdown((prevCountdown) => prevCountdown -1);
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }
+  }, [countdown])
+
+
   };
 
   return (
