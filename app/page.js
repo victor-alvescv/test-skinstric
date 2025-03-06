@@ -1,95 +1,128 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import Link from "next/link";
+import React, { useState } from "react";
 
-export default function Home() {
+function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="flex flex-row h-[64px] w-full justify-between py-3 mb-3">
+        <div className="flex flex-row pt-1 scale-75">
+          <button className="font-bold text-s mr-2" variant="ghost" asChild>
+            <Link href="/" className="line-clamp-4">
+              SKINSTRIC
+            </Link>
+          </button>
+          <p className="text-muted-foreground pt-[7.5px] font-semibold text-sm ml-1">
+            INTRO
+          </p>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </div>
+
+      <div className="pointer-events-none fixed -z-[1] w-full h-full flex md:hidden justify-center items-center">
+        {" "}
+        <div className="opacity-50">
+          {" "}
+          <svg
+            fill="#333"
+            height="55px"
+            width="55px"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 472.615 472.615"
+            xmlSpace="preserve"
+          >
+            {" "}
+            <path d="M236.308,0C105.799,0,0,105.798,0,236.308c0,130.507,105.799,236.308,236.308,236.308s236.308-105.801,236.308-236.308 C472.615,105.798,366.816,0,236.308,0z M139.346,347.733V124.88l229.37,111.428L139.346,347.733z"></path>{" "}
+          </svg>{" "}
+        </div>{" "}
+      </div>
+
+      <div
+        className={`
+              relative z-10 text-center transition-transform duration-700 ease-in-out`}
+      >
+        <h1 className="text-[60px] lg:text-[100px] font-inter font-normal tracking-tighter leading-none">
+          Sophisticated
+          <br />
+          <span
+            className={`
+                  block transition-transform duration-700 ease-in-out`}
+          >
+            skincare
+          </span>
+        </h1>
+      </div>
+
+      <p className=" z-10 block w-[30ch] mt-4 text-[16px] font-semibold text-center text-muted-foreground">
+        SKINTRIC DEVELOPED AN A.I. THAT CREATES
+        <br /> A HIGHLY PERSONALIZED ROUTINE TAILORED TO
+        <br /> WHAT YOUR SKIN NEEDS.
+      </p>
+
+      <div
+        className={`
+            hidden lg:block absolute top-1/2 right-[-350px] -translate-y-1/2 w-[500px] h-[500px]
+            transition-opacity duration-500 ease-in-out
+          `}
+      >
+        <div
+          className={`
+            hidden lg:block absolute top-1/2 left-[-350px] -translate-y-1/2 w-[500px] h-[500px]
+            transition-opacity duration-500 ease-in-out
+          `}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          <div className="relative w-full h-full">
+            <div
+              className="absolute inset-0"
+              size="w-full h-full"
+              dotted
+              borderColorClass="border-black"
+            />
+            <button
+              className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 px-3 py-1"
+              variant="ghost"
+            >
+              Discover A.I.
+              <div
+                className="rotate-45"
+                size="w-[30px] h-[30px]"
+                dotted={false}
+              />
+              <span className="absolute left-[115px] scale-[0.6]">
+                &#x25B6;
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div className="relative w-full h-full">
+          <div
+            className="absolute inset-0"
+            size="w-full h-full"
+            dotted
+            borderColorClass="border-black"
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <Link href="/testing" passHref>
+            <button
+              className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 px-3 py-1"
+              variant="ghost"
+            >
+              <div
+                className="rotate-45"
+                size="w-[30px] h-[30px]"
+                dotted={false}
+              />
+              <span className="absolute left-[20px] scale-[0.6] rotate-180">
+                &#x25B6;
+              </span>
+              Take the Test
+            </button>
+          </Link>
+        </div>
+      </div>
+    </>
   );
 }
+
+export default Home;
