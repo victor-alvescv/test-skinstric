@@ -52,7 +52,7 @@ function Aicamera() {
   }, [countdown])
 
 
-  };
+  
 
   return (
     <div className="flex flex-col m-0">
