@@ -7,6 +7,7 @@ function Aicamera() {
   const [cameraAccess, setCameraAccess] = useState(null);
   const videoRef = useRef(null);
   const [countdown, setCountdown] = useState(3);
+  const [isTakingSnapshot, setIsTakingSnapshot] = useState(false);
 
 
 
@@ -36,15 +37,23 @@ function Aicamera() {
   }, [cameraAccess]);
 
   const startCountdown = () => {
+    setIsTakingSnapshot(true);
     setCountdown(3);
     console.log("Starting countdown...");
   };
 
   useEffect(() => {
-    if (countdown > 0) {
+    if (isTakingSnapshot && countdown > 0) {
         const timer = setInterval(() => {
             setCountdown((prevCountdown) => prevCountdown -1);
         }, 1000);
+
+        // stop countdown when it reaches 0 
+        
+        if (countdown === 0) {
+          clearInterval(timer);
+          console.log("Countdown finished");
+        }
 
         return () => clearInterval(timer);
     }
