@@ -6,6 +6,13 @@ import React, { useEffect, useState, useRef } from "react";
 function Aicamera() {
   const [cameraAccess, setCameraAccess] = useState(null);
   const videoRef = useRef(null);
+  const [countdown, setCountdown] = useState(3);
+
+  const startCountdown = () => {
+    setIsTakingSnapshot(true);
+    setCountdown(3);
+    console.log("Starting countdown...");
+  }
 
   useEffect(() => {
     async function requestCameraAccess() {
@@ -32,8 +39,7 @@ function Aicamera() {
     console.log(cameraAccess);
   }, [cameraAccess]);
 
-  const startCountdown = () => {
-    // Add your countdown logic here
+
 
     console.log("Starting countdown...");
   };
