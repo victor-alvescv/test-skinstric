@@ -49,7 +49,7 @@ function Aicamera() {
         }, 1000);
 
         // stop countdown when it reaches 0 
-        
+
         if (countdown === 0) {
           clearInterval(timer);
           console.log("Countdown finished");
@@ -121,6 +121,11 @@ function Aicamera() {
               >
                 TAKE PICTURE
               </span>
+              {isTakingSnapshot && countdown >0 && (
+                <div className="absolute top-1/2 left-1/2 transform text-white -translate-x-1/2 -translate-y-1/2 font-bold text-2xl">
+                  {countdown}
+                </div>
+              )}
             </>
           )}
         </div>
