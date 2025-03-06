@@ -34,7 +34,7 @@ function Demographics() {
 
   return (
     <>
-      <script src="https://kit.fontawesome.com/ee44fd8a77.js" crossorigin="anonymous"></script>
+
       <div className="flex flex-col flex-auto">
         <nav className="items-center flex h-16 justify-between left-0 fixed top-0 w-full z-30 mx-auto max-w-[2560px] px-8">
           <div className="flex items-center relative z-30">
@@ -207,7 +207,7 @@ function Demographics() {
                 <button href="/" className="button__proceed">
                     <span className="button__icon--square">
                       <span className="button__icon--square-inner button__icon-right">
-                      <FontAwesomeIcon icon="fa-solid fa-arrow-left" />
+                      {/* <FontAwesomeIcon icon="fa-solid fa-arrow-left" /> */}
                       </span>
                     </span>
                     <span className="padding-right: 18px transition-transform duration-500 ease-custom-bezier">

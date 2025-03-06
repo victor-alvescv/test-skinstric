@@ -86,12 +86,16 @@ function Aicamera() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ image: base64String }),
-        }
-      );
+        }, 3000);
 
       const data = await response.json();
+      localStorage.setItem("analysisResult", JSON.stringify(data));
+      setInterval(() => {
+        router.push("/demographics");
+
+      })
       console.log("API Response:", data);
-      router.push("/demographics");
+
 
     } catch (error) {
       console.error("Error sending image to API:", error);
