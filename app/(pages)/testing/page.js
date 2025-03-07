@@ -19,8 +19,8 @@ function Testing() {
       reader.onloadend = () => {
         const base64String = reader.result;
         localStorage.setItem("capturedImage", base64String);
-      };
-      router.push("/demographics");
+        router.push("/demographics");
+      };   
       reader.readAsDataURL(file);
       };
     };
