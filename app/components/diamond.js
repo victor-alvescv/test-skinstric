@@ -22,3 +22,5 @@ const Diamond = ({
     />
   );
 };
+
+export default Diamond;
