@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Diamond from "../app/components/diamond";
 import Link from "next/link";
-import { GoTriangleLeft } from "react-icons/go";
+import { GoTriangleRight } from "react-icons/go";
 
 
 const Home = () => {
