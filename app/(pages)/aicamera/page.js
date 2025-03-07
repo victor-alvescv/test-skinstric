@@ -109,7 +109,7 @@ function Aicamera() {
     <div className="flex flex-col m-0">
       <main className="flex flex-col relative z-auto flex-1">
         <div className="loading__screen">
-          <div className="absolute left-0 top-0 w-full h-full">
+          <div className="absolute w-full h-full">
             {cameraAccess && (
               <video
                 ref={videoRef}

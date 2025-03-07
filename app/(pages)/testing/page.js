@@ -12,26 +12,15 @@ function Testing() {
   const [hasPhoto, setHasPhoto] = useState(false);
 
 
-  const handleImageChange = (event) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImage(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleFileChange = (e) =>{
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
         const base64String = reader.result;
-        setPreviewImage(base64String);
-        localStoragetItem("capturedImage", base64String);
+        localStorage.setItem("capturedImage", base64String);
       };
+      router.push("/demographics");
       reader.readAsDataURL(file);
       };
     };
@@ -87,7 +76,7 @@ function Testing() {
               <input
                 type="file"
                 accept="image/*"
-                onChange={handleImageChange}
+                onChange={handleFileChange}
                 className="hidden"
                 id="fileInput"
               />
