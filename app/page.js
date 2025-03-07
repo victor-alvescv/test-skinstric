@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Diamond from "../components/diamond";
+import Diamond from "../app/components/diamond";
 import Link from "next/link";
 
 const Home = () => {
