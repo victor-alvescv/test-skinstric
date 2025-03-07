@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { useRouter } from  'next/navigation';
+import { useRouter } from "next/navigation";
 
 function Aicamera() {
   const [cameraAccess, setCameraAccess] = useState(null);
@@ -12,7 +12,6 @@ function Aicamera() {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-
 
   useEffect(() => {
     async function requestCameraAccess() {
@@ -86,51 +85,79 @@ function Aicamera() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ image: base64String }),
-        }, 3000);
+        },
+        3000
+      );
 
       const data = await response.json();
       localStorage.setItem("analysisResult", JSON.stringify(data));
       setInterval(() => {
         router.push("/demographics");
-
-      })
+      });
       console.log("API Response:", data);
-
-
     } catch (error) {
       console.error("Error sending image to API:", error);
     } finally {
       setLoading(false);
-
     }
   };
 
-  return (
-    <div className="flex flex-col m-0">
-      <main className="flex flex-col relative z-auto flex-1">
-        <div className="loading__screen">
-          <div className="absolute w-full h-full">
-            {cameraAccess && (
+  if (cameraAccess === null) {
+    // Initial screen asking for camera access
+    return (
+      <div className="flex flex-col m-0">
+        <main className="flex flex-col relative z-auto flex-1">
+          <div className="loading__screen">
+            <div className="absolute">
+              <span
+                className="dotted-square is-expanded is-animated"
+                style={{ "--size": "19.7vw" }}
+              ></span>
+              <div className="absolute left-1/2 top-1/2 max-w-[227px] text-center transform -translate-x-1/2 -translate-y-1/2 font-semibold">
+                {"Requesting camera access..."}
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  if (cameraAccess === false) {
+    // Camera access denied screen
+    return (
+      <div className="flex flex-col m-0">
+        <main className="flex flex-col relative z-auto flex-1">
+          <div className="loading__screen">
+            <div className="absolute">
+              <span
+                className="dotted-square is-expanded is-animated"
+                style={{ "--size": "19.7vw" }}
+              ></span>
+              <div className="absolute left-1/2 top-1/2 max-w-[227px] text-center transform -translate-x-1/2 -translate-y-1/2 font-semibold">
+                {"CAMERA ACCESS IS REQUIRED!"}
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  if (cameraAccess === true) {
+    // Camera access granted, show video feed and snapshot functionality
+    return (
+      <div className="flex flex-col m-0">
+        <main className="flex flex-col relative z-auto flex-1">
+          <div className="loading__screen">
+            <div className="absolute">
               <video
                 ref={videoRef}
                 autoPlay
                 muted
-                className="w-full h-full object-cover"
+                className="w-screen  object-cover"
               />
-            )}
 
-            <span
-              className="dotted-square is-expanded is-animated"
-              style={{ "--size": "19.7vw" }}
-            ></span>
-
-            <div className="absolute left-1/2 top-1/2 max-w-[227px] text-center transform -translate-x-1/2 -translate-y-1/2 font-semibold">
-              {cameraAccess === false ? "CAMERA ACCESS IS REQUIRED!" : ""}
-            </div>
-          </div>
-
-          {cameraAccess === true && (
-            <>
               <button
                 className="absolute right-6 top-1/2 flex items-center justify-center w-16 h-16 bg-white text-green-500 rounded-full shadow-lg"
                 onClick={startCountdown}
@@ -145,6 +172,7 @@ function Aicamera() {
               >
                 TAKE PICTURE
               </span>
+
               {isTakingSnapshot && countdown > 0 && (
                 <div className="absolute top-1/2 left-1/2 transform text-white -translate-x-1/2 -translate-y-1/2 font-bold text-2xl">
                   {countdown}
@@ -161,13 +189,15 @@ function Aicamera() {
                   />
                 </div>
               )}
-            </>
-          )}
-        </div>
-        <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
-      </main>
-    </div>
-  );
+            </div>
+          </div>
+          <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
+        </main>
+      </div>
+    );
+  }
+
+  return null;
 }
 
 export default Aicamera;

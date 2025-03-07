@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Diamond from "../app/components/diamond";
 import Link from "next/link";
 
+
 const Home = () => {
   const [hoveredDiamond, setHoveredDiamond] = useState(null);
 
@@ -16,6 +17,18 @@ const Home = () => {
 
   return (
     <>
+<nav className="items-center flex h-16 justify-between left-0 fixed top-0 w-full z-30 mx-auto max-w-[2560px] px-8">
+          <div className="flex items-center relative z-30">
+            <Link
+              href="/"
+              className="font-bold text-[10px]"
+              style={{ fontSize: "clamp(10px, 2px + 0.625vw, 14px)" }}
+            >
+              SKINSTRIC
+            </Link>
+          </div>
+        </nav>
+
       {/* Wrapper div for scaling on mobile */}
       <div className="max-sm:scale-[0.75] max-sm:origin-center max-sm:p-6">
         <div
