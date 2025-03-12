@@ -144,7 +144,7 @@ function Demographics() {
                   </p>
                 </>
               ) : (
-                <p className="text-sm">Loading...</p>
+                <p className="text-sm"></p>
               )}
             </div>
 
@@ -170,7 +170,7 @@ function Demographics() {
                     </div>
                   ))
                 ) : (
-                  <p className="text-sm">Loading...</p>
+                  <p className="text-sm"></p>
                 )}
               </div>
             </div>
