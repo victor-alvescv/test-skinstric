@@ -8,15 +8,17 @@ function Demographics() {
     const [analysisResult, setAnalysisResult] = useState(null);
 
     useEffect(() => {
-        const storedResult = localStorage.getItem("analysisResult");
-        if (storedResult) {
-          try {
-            const parsedResult = JSON.parse(storedResult);
-            parsedResult.data && setAnalysisResult(parsedResult.data);
-          } catch (error) {
-            console.error("Error parsing analysis result:", error);
-          }
-        }
+      if (typeof window !== "undefined") {    
+        const storedResult = localStorage.getItem("analysisResult");    
+        if (storedResult) {    
+          try {    
+            const parsedResult = JSON.parse(storedResult);    
+            parsedResult.data && setAnalysisResult(parsedResult.data);    
+          } catch (error) {    
+            console.error("Error parsing analysis result:", error);    
+          }    
+        }    
+      }
       }, []);
     
       const getHighestConfidence = (category) => {
