@@ -479,3 +479,5 @@ svg {
     transform: var(--base-transform) rotate(calc(var(--base-rotation) + 1turn));
   }
 }
+
+/* 1we */
