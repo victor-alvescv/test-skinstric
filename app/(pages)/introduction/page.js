@@ -2,59 +2,26 @@
 import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
-import { LoadScript, Autocomplete } from "@react-google-maps/api";
-import { useRouter } from  'next/navigation';
+import { useRouter } from 'next/navigation';
 
 function Introduction() {
   const [name, setName] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
-  const [location, setLocation] = useState("");
   const [showLocation, setShowLocation] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  const [autocomplete, setAutocomplete] = useState(null);
-  const [isLocationSelected, setisLocationSelected] = useState(false);  
+  const [location, setLocation] = useState("");
   const router = useRouter(); 
-
-
-  const GOOGLE_MAPS_API_KEY = "AIzaSyDRRUxxF3WJwDJwmuSKZHM61vqIc4UXdAo";
 
   const handleProceed = () => {
     setShowLocation(true);
-    setIsTyping(false);
   };
 
   const handleBack = () => {
     setShowLocation(false);
-    setIsTyping(true);
   };
 
-  const handleClick = () => {
-    setIsTyping(true);
-  };
-
-  const onLoad = (autoC) => {
-    setAutocomplete(autoC);
-  };
-
-  const onPlaceChanged = () => {
-    if (autocomplete) {
-      const place = autocomplete.getPlace();
-      if (place.formatted_address) {
-        setLocation(place.formatted_address);
-      } else if (place.name) {
-        setLocation(place.name);
-      }
-    }
-    setisLocationSelected(true);
-    postData()
-  };
-
-const handlePlaceProceed = () => {
-  if (isLocationSelected) {
+  const handlePlaceProceed = () => {
     router.push("/testing");
-  }
-};
-
+  };
 
   const postData = async () => {
     try {
@@ -66,7 +33,7 @@ const handlePlaceProceed = () => {
         }
       );
 
-      console.log(response.data); // Log the response data if needed
+      console.log(response.data);
     } catch (error) {
       console.error(
         "Error:",
@@ -111,138 +78,60 @@ const handlePlaceProceed = () => {
               </div>
               <form>
                 <div className="py-[5px] relative">
-                  <>
-                    {!showLocation ? (
-                      <>
-                        <input
-                          type="text"
-                          value={name}
-                          onFocus={() => setIsFocused(true)}
-                          onBlur={() => setIsFocused(false)}
-                          style={{
-                            width: "calc((18ch - 5.5ch))",
-                            fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
-                          }}
-                          onChange={(e) => setName(e.target.value)}
-                          className="border-b-[1px] bg-transparent border-[#1a1b1c] py-[5px] text-center outline-none text-[#1a1b1c] border-solid leading-[1] tracking-[-.07em]"
-                        />
-                        <label
-                          style={{
-                            width: `calc((18ch - 5.5ch))`,
-                            fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
-                          }}
-                          className={`text-[#1a1b1c] transition-all ${
-                            isFocused || name.length > 1
-                              ? "opacity-0"
-                              : "opacity-1"
-                          }
+                  {!showLocation ? (
+                    <>
+                      <input
+                        type="text"
+                        value={name}
+                        onFocus={() => setIsFocused(true)}
+                        onBlur={() => setIsFocused(false)}
+                        style={{
+                          width: "calc((18ch - 5.5ch))",
+                          fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
+                        }}
+                        onChange={(e) => setName(e.target.value)}
+                        className="border-b-[1px] bg-transparent border-[#1a1b1c] py-[5px] text-center outline-none text-[#1a1b1c] border-solid leading-[1] tracking-[-.07em]"
+                      />
+                      <label
+                        style={{
+                          width: `calc((18ch - 5.5ch))`,
+                          fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
+                        }}
+                        className={`text-[#1a1b1c] transition-all ${
+                          isFocused || name.length > 1 ? "opacity-0" : "opacity-1"
+                        }
                               text-center leading-[1.33] left-0 top-[5px] absolute name-label pointer-events-none tracking-[-.07em] `}
-                        >
-                          Introduce Yourself
-                        </label>
-                      </>
-                    ) : (
-                      <>
-                        <LoadScript
-                          googleMapsApiKey={GOOGLE_MAPS_API_KEY}
-                          libraries={["places"]}
-                          className="w-full"
-                        >
-                          <Autocomplete
-                            className="w-full"
-                            onLoad={onLoad}
-                            onPlaceChanged={onPlaceChanged}
-                          >
-                            <input
-                              style={{
-                                width: "calc((21ch - 5.5ch))",
-                                fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
-                              }}
-                              placeholder={
-                                isFocused && name.length > 1
-                                  ? "Enter a location"
-                                  : ""
-                              }
-                              onFocus={() => setIsFocused(true)}
-                              onBlur={() => setIsFocused(false)}
-                              onChange={(e) => setLocation(e.target.value)}
-                              className="border-b-[1px] bg-transparent border-[#1a1b1c] py-[5px] text-center outline-none text-[#1a1b1c] border-solid leading-[1] tracking-[-.07em]"
-                              type="text"
-                              value={location}
-                            ></input>
-                          </Autocomplete>
-                        </LoadScript>
-
-                        <label
-                          style={{
-                            width: `calc((21ch - 5.5ch))`,
-                            fontSize: "clamp(44px, 12px + 2.5vw, 60px)",
-                          }}
-                          className={`text-[#1a1b1c] ${
-                            isFocused || location.length > 0
-                              ? "opacity-0"
-                              : "opacity-1"
-                          } text-center transition-all leading-[1.33] left-0 top-[5px] name-label absolute pointer-events-none tracking-[-.07em]`}
-                        >
-                          Where are you from?
-                        </label>
-                      </>
-                    )}
-                  </>
+                      >
+                        Introduce Yourself
+                      </label>
+                    </>
+                  ) : (
+                    <input
+                      type="text"
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      placeholder="Where are you from?"
+                      className="border-b-[1px] bg-transparent border-[#1a1b1c] py-[5px] text-center outline-none text-[#1a1b1c] border-solid leading-[1] tracking-[-.07em]"
+                    />
+                  )}
                 </div>
               </form>
             </div>
             <div className="items-center flex mt-auto">
-              <div className="mr-auto flex-none flex-shrink basis-1/4 pr-2.5 text-color-color">
-
-
-              <button 
-                onClick={handleBack}
-                className="button__back">
-                  <div className="flex justify-center item-center gap-2">
-                    <img
-                      src="/arrow-left-circle.svg"
-                      className="w-[30px] h-[30px]"
-                      alt="Arrow left"
-                    />
-                  <span className="padding-right: 18px pt-1 transition-transform duration-500 ease-custom-bezier">
-                    BACK
-                  </span>
-                  </div>
-                </button>
-
-              </div>
-              <div className="ml-auto flex-none flex justify-end git add flex-shrink basis-1/4 pr-2.5 text-color-color">
-                {!showLocation && name && (
-                  <button onClick={handleProceed} className="button__proceed">
-                  <div className="flex justify-center item-center gap-2">
-                    <span className="padding-right: 18px pt-1 transition-transform duration-500 ease-custom-bezier">
-                      PROCEED
-                    </span>
-                      <img
-                        src="/arrow-right-circle.svg"
-                        className="w-[30px] h-[30px]"
-                        alt="Arrow right"
-                      />
-                    </div>
-                    </button>
-                )}
-
-{showLocation && isLocationSelected && (
+              <button onClick={handleBack} className="button__back">
+                BACK
+              </button>
+              {showLocation ? (
                 <button onClick={handlePlaceProceed} className="button__proceed">
-                <div className="flex justify-center item-center gap-2">
-                  <span className="padding-right: 18px pt-1 transition-transform duration-500 ease-custom-bezier">
+                  PROCEED
+                </button>
+              ) : (
+                name && (
+                  <button onClick={handleProceed} className="button__proceed">
                     PROCEED
-                  </span>
-                    <img
-                      src="/arrow-right-circle.svg"
-                      className="w-[30px] h-[30px]"
-                      alt="Arrow right"
-                    />
-                  </div>
                   </button>
-                )}
-              </div>
+                )
+              )}
             </div>
           </div>
         </main>
