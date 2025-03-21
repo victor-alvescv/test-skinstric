@@ -20,7 +20,7 @@ function Introduction() {
   };
 
   const handlePlaceProceed = () => {
-    router.push("/testing");
+    router.push("/testing-page");
   };
 
   const postData = async () => {

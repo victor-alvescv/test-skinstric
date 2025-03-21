@@ -91,7 +91,7 @@ const Home = () => {
 
               {/* Mobile button */}
               <div className=" z-10 mt-4 lg:hidden">
-                <Link href="/testing">
+                <Link href="/testing-page">
                   <button className="relative flex items-center gap-4">
                     <span className="text-[12px] font-bold">ENTER EXPERIENCE</span>
                     <Diamond
@@ -187,7 +187,7 @@ const Home = () => {
                   dotted
                   borderColorClass="border-black"
                 />
-                <Link href="/testing" passHref>
+                <Link href="/testing-page" passHref>
                   <button
                     onMouseEnter={() => setHoveredDiamond("right")}
                     onMouseLeave={() => setHoveredDiamond(null)}
