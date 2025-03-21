@@ -8,8 +8,7 @@ function Demographics() {
     const [analysisResult, setAnalysisResult] = useState(null);
 
     useEffect(() => {
-      if (typeof window !== "undefined") {    
-        const storedResult = localStorage.getItem("analysisResult");    
+      const storedResult = localStorage.getItem("analysisResult");    
         if (storedResult) {    
           try {    
             const parsedResult = JSON.parse(storedResult);    
@@ -18,7 +17,6 @@ function Demographics() {
             console.error("Error parsing analysis result:", error);    
           }    
         }    
-      }
       }, []);
     
       const getHighestConfidence = (category) => {
